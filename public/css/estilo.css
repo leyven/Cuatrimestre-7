@@ -1,0 +1,16 @@
+table {
+  border-style:double;
+  background-color:#47A484;
+  border-spacing:12px;
+ }
+
+th {
+  border-style:solid;
+  background-color:#6F7472;
+ }
+  
+td {
+  border-style:groove;
+  background-color:#A7A3A3;
+  padding:4px;
+ }

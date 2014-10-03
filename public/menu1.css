@@ -1,0 +1,60 @@
+
+ul#menu ul {
+display: none;
+position: relative;
+top: 24;
+left:0;
+margin:0;
+padding:0;
+background:#FFFFFF;
+}
+
+ul#menu ul li {
+display: block !important;
+
+}
+
+ul#menu li:hover ul{
+display: none;
+
+}
+
+ul#menu li:hover ul{
+display: block;
+}
+#menu {
+margin:0 auto;
+}
+
+#menu li {
+margin:0 1px;
+width:98px;
+min-height:19px;
+text-align:center;
+background:#BBB;
+list-style:none;
+padding:2px 0;
+}
+
+/* y otro poquito por aquí.. */
+
+#menu li:hover {
+background:#000000;
+}
+
+#menu li a {
+font:bold 14px Arial, Helvetica, sans-serif;
+color:#FFF;
+text-decoration:none;
+}
+
+#menu li ul li{
+float:none;
+width:98px;
+margin:1px 0;
+}
+
+
+
+
+

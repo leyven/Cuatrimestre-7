@@ -16,8 +16,7 @@ Route::get('/', function()
 	return View::make('hello');
 });
 
-<<<<<<< HEAD
+
 Route::get('/CatalogoAyuda', 'CatalogoController@mostrarCatalogo');
-=======
+
 Route::get('/actividades', 'actividadController@mostrar');
->>>>>>> 6a3b7aaa4fbeb0286bb61c04f9556b73cb918f11

@@ -9,7 +9,7 @@
 <body>
 	<img id="logo"src="img/buenaventura.gif" alt="">
 	<div id="container">
-		<table border = "1" width = "100%"> 
+		<table> 
 			<tr> 
 				<th>Folio</th> 
 				<th>Nombre actividad</th> 

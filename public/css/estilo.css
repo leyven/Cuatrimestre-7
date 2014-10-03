@@ -43,19 +43,22 @@
   	position: relative;
   	width: auto;}
 
+table,th,td{
+	border-radius: .5em;
+}
+
 table {
-  border-style:double;
-  background-color:#47A484;
-  border-spacing:12px;
+  padding-top: 1%;
  }
 
 th {
   border-style:solid;
+  border-color: #6F7472 ;
   background-color:#6F7472;
  }
   
 td {
   border-style:groove;
-  background-color:#A7A3A3;
+  background-color:white;
   padding:4px;
  }

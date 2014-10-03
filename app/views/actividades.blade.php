@@ -8,6 +8,7 @@
 
 <body>
 	<img id="logo"src="img/buenaventura.gif" alt="">
+	<center><h1>ACTIVIDADES</h1></center>
 	<div id="container">
 		<table> 
 			<tr> 

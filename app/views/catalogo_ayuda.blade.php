@@ -1,4 +1,3 @@
-
 {{ HTML::style('menu1.css') }}
 {{ HTML::script('js/jquery.js') }}
 

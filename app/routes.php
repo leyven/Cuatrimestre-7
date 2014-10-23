@@ -20,4 +20,5 @@ Route::get('/', function()
 Route::get('/CatalogoAyuda', 'CatalogoController@mostrarCatalogo');
 
 Route::get('/actividades', 'actividadController@mostrar');
+Route::get('/registro_actividades', 'actividadController@registro');
 

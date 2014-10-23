@@ -38,8 +38,9 @@
   	margin-top: 8%;
   	max-width: 700px;
   	padding-bottom: 15px;
-  	padding-left: 15px;
+  	padding-left: 30px;
   	padding-right: 15px;
+  	padding-top: 10px;
   	position: relative;
   	width: auto;}
 
@@ -62,3 +63,7 @@ td {
   background-color:white;
   padding:4px;
  }
+
+ input{
+	border-radius: 5px;
+}

@@ -14,6 +14,14 @@ class actividadController extends BaseController{
 		return View::make('actividades')->with('var', $var);
 
 	}
+
+
+	public function registro(){
+
+
+		return View::make('registro_actividades');
+
+	}
 	
 }
 

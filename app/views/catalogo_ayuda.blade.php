@@ -1,5 +1,12 @@
+<<<<<<< HEAD
 {{ HTML::style('menu1.css') }}
+=======
+
+{{ HTML::style('css/estilo.css') }}
+{{ HTML::style('css/menu1.css') }}
+>>>>>>> 74a25221b93c033fcf452fdb8960d178f93afc3b
 {{ HTML::script('js/jquery.js') }}
+{{ HTML::script('js/ocultify.js') }}
 
 <title>Inicio</title>
 <div id="catalogo">
@@ -11,7 +18,7 @@
 data-Nombre=""
 data-Descripcion=""
 data-Solucion=""> 
-<li><a href="#" title="Texto">{{$key->Nombre}}<input type="hidden" value="1" /> </a></li>
+<li class="{{$key->idCategoria}}" ><a href="#" title="Texto">{{$key->Nombre}}<input type="hidden" value="1" /> </a></li>
 </div>	
 @endforeach
 	
@@ -25,56 +32,61 @@ data-Solucion="">
 </ul>
 </div><br><br><br><br><br><br>
 		<section id="contenido">
-		<table border=1 cellpadding=4 cellspacing=0>        
+	        
 		
 
 
 		<div id="category1">
-
+			<table border=1 cellpadding=4 cellspacing=0>	
 		<th>Nombre </th><th>Descripción</th><th>Solución
 				</th> 
 			@foreach($catalogocat1 as $key)
 			{{'<tr>'.'<td>'.$key->Nombre.'</td>'.'<td>'.$key->Descripcion.'</td>'.'<td>'.$key->Solucion.'</td>'.'</tr>'}}
 			@endforeach  
+			</table>
 		</div>
 		
 		<div id="category2">
-		
+			<table border=1 cellpadding=4 cellspacing=0>
 		<th>Nombre </th><th>Descripción</th><th>Solución
 				</th> 
 			@foreach($catalogocat2 as $key)
 			{{'<tr>'.'<td>'.$key->Nombre.'</td>'.'<td>'.$key->Descripcion.'</td>'.'<td>'.$key->Solucion.'</td>'.'</tr>'}}
 			@endforeach  
+		</table>
 		</div>
 		
 		<div id="category3">
-		
+			<table border=1 cellpadding=4 cellspacing=0>
 		<th>Nombre </th><th>Descripción</th><th>Solución
 				</th> 
 			@foreach($catalogocat3 as $key)
 			{{'<tr>'.'<td>'.$key->Nombre.'</td>'.'<td>'.$key->Descripcion.'</td>'.'<td>'.$key->Solucion.'</td>'.'</tr>'}}
 			@endforeach  
+		</table>
 		</div>
 		
 		<div id="category4">
-		
+			<table border=1 cellpadding=4 cellspacing=0>
 		<th>Nombre </th><th>Descripción</th><th>Solución
 				</th> 
 			@foreach($catalogocat4 as $key)
 			{{'<tr>'.'<td>'.$key->Nombre.'</td>'.'<td>'.$key->Descripcion.'</td>'.'<td>'.$key->Solucion.'</td>'.'</tr>'}}
-			@endforeach  
+			@endforeach
+			</table>  
 		</div>
 		
 		<div id="category5">
-		Desarrollo <br>
+			<table border=1 cellpadding=4 cellspacing=0>
 		<th>Nombre </th><th>Descripción</th><th>Solución
 				</th> 
 			@foreach($catalogocat5 as $key)
 			{{'<tr>'.'<td>'.$key->Nombre.'</td>'.'<td>'.$key->Descripcion.'</td>'.'<td>'.$key->Solucion.'</td>'.'</tr>'}}
-			@endforeach  
+			@endforeach
+			</table>  
 		</div>
 
 
-		</table>	
+			
 		</section>
 		

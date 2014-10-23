@@ -4,7 +4,8 @@
 {{ HTML::script('js/jquery.js') }}
 {{ HTML::script('js/ocultify.js') }}
 
-<title>Inicio</title>
+<title>Catálogo de ayuda</title>
+<img id="logo"src="img/buenaventura.gif" alt="">
 <div id="catalogo">
 <br><br><h1><center>Catalogo de ayuda</center></h1>
 <div id="menu">
@@ -26,7 +27,7 @@ data-Solucion="">
 	</li>
 	
 </ul>
-</div><br><br><br><br><br><br>
+</div><center>
 		<section id="contenido">
 	        
 		
@@ -86,3 +87,4 @@ data-Solucion="">
 			
 		</section>
 		
+</center>

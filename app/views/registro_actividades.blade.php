@@ -7,7 +7,7 @@
 
 <body>
 	<img id="logo"src="img/buenaventura.gif" alt="">
-	<center><h1>ACTIVIDADES</h1></center>
+	<center><h1>Registro de Actividades</h1></center>
 	<div id="container">
 		<form action="">
 			<center><table>
@@ -34,24 +34,24 @@
 				<tr>
 					<td>Fecha/Hora Inicio:</td>
 					<td>
-						<input type="number" required placeholder="dd/mm/aaaa" size="15" maxlength="30"required>
-						<input type="number"placeholder="Hora" size="15" maxlength="30"required>
+						<input type="text" required placeholder="dd/mm/aaaa" size="15" maxlength="30"required>
+						<br><input type="text"placeholder="Hora" size="15" maxlength="30"required>
 					</td>
 
 				</tr>
 				<tr>
 					<td>Fecha estimada<br>de termino:</td>
-					<td><input type="number" required placeholder="dd/mm/aaaa" size="15" maxlength="30"required></td>
+					<td><input type="text" required placeholder="dd/mm/aaaa" size="15" maxlength="30"required></td>
 				</tr>
 				<tr>
 					<td>Fecha/Hora de termino:</td>
 					<td>
-						<input type="number" required placeholder="dd/mm/aaaa" size="15" maxlength="30"required>
-						<input type="number"placeholder="Hora" size="15" maxlength="30"required>
+						<input type="text" required placeholder="dd/mm/aaaa" size="15" maxlength="30"required>
+						<br><input type="text"placeholder="Hora" size="15" maxlength="30"required>
 					</td>
 				</tr>
 				<tr>
-					<td>Descrión:</td>
+					<td>Descripción:</td>
 					<td><textarea name="descripcion" id="" cols="30" rows="20"></textarea></td>
 				</tr>
 				<tr>

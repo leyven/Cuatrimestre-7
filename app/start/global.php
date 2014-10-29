@@ -1,4 +1,22 @@
 <?php
+/*
+|--------------------------------------------------------------------------
+| Custom Form Macros
+|--------------------------------------------------------------------------
+|
+*/
+ 
+Form::macro('custom', function($type, $name, $value = null, $options = array()) {
+    $value = ((is_null($value) or $value == '')) ? Input::old($name) : $value;
+    $input =  '<input type="'. $type .'" name="' . $name . '" value="' . $value . '"';
+    foreach ($options as $key => $value) {
+        $input .= ' ' . $key . '="' . $value . '"';
+    }
+    return $input.'>';
+});
+
+
+
 
 /*
 |--------------------------------------------------------------------------

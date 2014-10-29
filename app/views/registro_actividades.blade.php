@@ -2,63 +2,67 @@
 	<meta charset="UTF-8">
 	<!--<link rel='shortcut icon' href='img/logo-ico.png' type='image/png'>-->
 	<title>Control de Actividades</title>
-	<link rel="stylesheet" type="text/css" href="css/estilo.css" media="screen" />
+	{{ HTML::style('css/estilo.css') }}
 </head>
 
 <body>
 	<img id="logo"src="img/buenaventura.gif" alt="">
-	<center><h1>ACTIVIDADES</h1></center>
+	<center><h1>Registro de Actividades</h1></center>
 	<div id="container">
-		<form action="">
-			<center><table>
-				<tr>
-					<td>Actividad: </td>
-					<td><input type="text"placeholder="Actividad" size="15" maxlength="30"required></td>
-				</tr>
-				<tr>
-					<td>Prioridad:</td>
-					<td><!--Aqui va el label con los datos de la prioridad--></td>
-				</tr>
-				<tr>
-					<td>Departamento</td>
-					<td><input type="text"placeholder="Departamento" size="15" maxlength="30"required></td>
-				</tr>
-				<tr>
-					<td>Requerimiento al<br>que pertenece:</td>
-					<td><input type="text"placeholder="Requerimiento" size="15" maxlength="30"required></td>
-				</tr>
-				<tr>
-					<td>Encargado:</td>
-					<td><input type="text"placeholder="Encargado" size="15" maxlength="30"required></td>
-				</tr>
-				<tr>
-					<td>Fecha/Hora Inicio:</td>
-					<td>
-						<input type="number" required placeholder="dd/mm/aaaa" size="15" maxlength="30"required>
-						<input type="number"placeholder="Hora" size="15" maxlength="30"required>
-					</td>
 
-				</tr>
-				<tr>
-					<td>Fecha estimada<br>de termino:</td>
-					<td><input type="number" required placeholder="dd/mm/aaaa" size="15" maxlength="30"required></td>
-				</tr>
-				<tr>
-					<td>Fecha/Hora de termino:</td>
-					<td>
-						<input type="number" required placeholder="dd/mm/aaaa" size="15" maxlength="30"required>
-						<input type="number"placeholder="Hora" size="15" maxlength="30"required>
-					</td>
-				</tr>
-				<tr>
-					<td>Descrión:</td>
-					<td><textarea name="descripcion" id="" cols="30" rows="20"></textarea></td>
-				</tr>
-				<tr>
-					<td>Capturista: </td>
-					<td><input type="text"placeholder="Capturista" size="15" maxlength="30"required></td>
-				</tr>
-			</table></center>
-		</form>
+	{{Form::open(array('action' => 'actividadController@registro'))}}
+<br>
+	{{Form::label('Actividad', 'Actividad: ')}}
+	{{Form::text('Actividad')}}
+<br>
+<br>
+	{{Form::label('Prioridad', 'Prioridad: ')}}<br>
+<br>
+	{{Form::label('Descripcion', 'Descripcion: ')}}
+<br>
+	{{Form::textarea('Descripcion')}}
+<br>
+<br>
+	{{Form::label('Departamento', 'Departamento al que pertenece: ')}}
+	{{Form::text('Departamento')}}
+<br>
+<br>
+	{{Form::label('Requerimiento', 'Requerimiento: ')}}
+	{{Form::text('Requerimiento')}}
+<br>
+<br>
+	{{Form::label('Encargado', 'Encargado: ')}}
+	{{Form::text('Encargado')}}
+<br>
+<br>
+	{{Form::label('Fecha/Hora', 'Fecha/Hora de Inicio: ')}}
+	{{Form::custom('date', 'fecha_inicio')}}
+	{{Form::custom('time', 'hora_inicio')}}
+<br>	
+<br>
+	{{Form::label('FechaE', 'Fecha estimada de término: ')}}
+	{{Form::custom('date', 'fecha_estimada')}}
+<br>
+<br>
+	{{Form::label('Fecha/HoraT', 'Fecha/Hora de Término: ')}}
+	{{Form::custom('date', 'fecha_termino')}}
+	{{Form::custom('time', 'hora_termino')}}
+<br>	
+<br>
+
+	{{Form::submit('Guardar')}}
+{{Form::close()}}	
+	
+		<!--<form>
+			<label>Fecha/Hora Inicio: </label>
+			<input type="date" required>
+			<input type="numer"placeholder="Hora" size="15" maxlength="30"required><br><br>
+			<label>Fecha estimada de termino: </label>
+			<input type="date" required><br><br>
+			<label>Fecha/Hora de termino: </label>
+			<input type="date" required>
+			<input type="numer"placeholder="Hora" size="15" maxlength="30"required><br><br>
+		</form>-->
+
 	</div>
 </body>

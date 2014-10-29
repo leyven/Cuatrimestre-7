@@ -1,15 +1,20 @@
 <?php
 
 
-Route::get('/', function()
+Route::get('/registro_actividades', function()
 {
-	return View::make('hello');
+	return View::make('registro_actividades');
 });
 
 
 Route::get('/CatalogoAyuda', 'CatalogoController@mostrarCatalogo');
 
 Route::get('/actividades', 'actividadController@mostrar');
-Route::get('/registro_actividades', 'actividadController@registro');
+
+
+
+Route::get('/actividades', 'actividadController@mostrar');
+Route::post('/registro_actividades', 'actividadController@registro');
 Route::get('/registro_requerimientos', 'requerimientoController@registro');
+
 

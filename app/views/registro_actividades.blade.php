@@ -1,5 +1,4 @@
 <head>
-<!-- COLOCAR CSS a la TABLA -->
 	<meta charset="UTF-8">
 	<!--<link rel='shortcut icon' href='img/logo-ico.png' type='image/png'>-->
 	<title>Control de Actividades</title>
@@ -8,8 +7,9 @@
 
 <body>
 	<img id="logo"src="img/buenaventura.gif" alt="">
-	<center><h1>ACTIVIDADES</h1></center>
+	<center><h1>Registro de Actividades</h1></center>
 	<div id="container">
+
 	{{Form::open(array('action' => 'actividadController@registro'))}}
 <br>
 	{{Form::label('Actividad', 'Actividad: ')}}
@@ -63,5 +63,6 @@
 			<input type="date" required>
 			<input type="numer"placeholder="Hora" size="15" maxlength="30"required><br><br>
 		</form>-->
+
 	</div>
 </body>

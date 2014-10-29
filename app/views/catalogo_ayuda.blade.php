@@ -1,42 +1,92 @@
-
+<<<<<<< HEAD
 {{ HTML::style('menu1.css') }}
+=======
+
+{{ HTML::style('css/estilo.css') }}
+{{ HTML::style('css/menu1.css') }}
+>>>>>>> 74a25221b93c033fcf452fdb8960d178f93afc3b
 {{ HTML::script('js/jquery.js') }}
+{{ HTML::script('js/ocultify.js') }}
 
 <title>Inicio</title>
 <div id="catalogo">
 <br><br><h1><center>Catalogo de ayuda</center></h1>
 <div id="menu">
 <ul id="menu">
-	<li><a href="#" title="Texto">Red<input type="hidden" value="1" /> </a></li>
-	<li><a href="#" title="Texto">Teléfono<input type="hidden" value="2" /> </a></li>
-	<li><a href="#" title="Texto">Servidores<input type="hidden" value="3" /></a>
-	<li><a href="#" title="Texto">Aplicaciones<input type="hidden" value="4" /></a>
+@foreach ($categoria as $key ) 
+<div class= "categorias"
+data-Nombre=""
+data-Descripcion=""
+data-Solucion=""> 
+<li class="{{$key->idCategoria}}" ><a href="#" title="Texto">{{$key->Nombre}}<input type="hidden" value="1" /> </a></li>
+</div>	
+@endforeach
+	
 	<ul>
 		<li><a href="#" title="Texto">Sap</a></li>
 		<li><a href="#" title="Texto">Microsip</a></li>
 		<li><a href="#" title="Texto">Pigchamp</a></li>
 	</ul>
 	</li>
-	<li><a href="#" title="Texto">Desarrollo<input type="hidden" value="5" /></a></li>
+	
 </ul>
 </div><br><br><br><br><br><br>
 		<section id="contenido">
-		<table border=1 cellpadding=4 cellspacing=0>        
-		@foreach($catalogo as $cat)
-				{{'<th>'.'Nombre '.'</th>'.'<th>'.'Descripción'.'</th>'.'<th>'.'Solución'
-				.'</th>'.
-				'<tr>'.'<td>'.$cat->Nombre.'</td>'.'<td>'.$cat->Descripcion.'</td>'.'<td>'.$cat->Solucion.'</td>'.'</tr>'}}
-		@endforeach  
-		</table>	
-		</section>
+	        
 		
 
-<script>
 
-$('#contenido').delegate('img','click', function(){
-	$('#imgContent2').attr('src',$(this).attr('src').replace('thumb','large'));
-	$('#titleContent').html($(this).attr('title'));
-	$('#descriptionContent').html($(this).attr('alt'));
-});
+		<div id="category1">
+			<table border=1 cellpadding=4 cellspacing=0>	
+		<th>Nombre </th><th>Descripción</th><th>Solución
+				</th> 
+			@foreach($catalogocat1 as $key)
+			{{'<tr>'.'<td>'.$key->Nombre.'</td>'.'<td>'.$key->Descripcion.'</td>'.'<td>'.$key->Solucion.'</td>'.'</tr>'}}
+			@endforeach  
+			</table>
+		</div>
+		
+		<div id="category2">
+			<table border=1 cellpadding=4 cellspacing=0>
+		<th>Nombre </th><th>Descripción</th><th>Solución
+				</th> 
+			@foreach($catalogocat2 as $key)
+			{{'<tr>'.'<td>'.$key->Nombre.'</td>'.'<td>'.$key->Descripcion.'</td>'.'<td>'.$key->Solucion.'</td>'.'</tr>'}}
+			@endforeach  
+		</table>
+		</div>
+		
+		<div id="category3">
+			<table border=1 cellpadding=4 cellspacing=0>
+		<th>Nombre </th><th>Descripción</th><th>Solución
+				</th> 
+			@foreach($catalogocat3 as $key)
+			{{'<tr>'.'<td>'.$key->Nombre.'</td>'.'<td>'.$key->Descripcion.'</td>'.'<td>'.$key->Solucion.'</td>'.'</tr>'}}
+			@endforeach  
+		</table>
+		</div>
+		
+		<div id="category4">
+			<table border=1 cellpadding=4 cellspacing=0>
+		<th>Nombre </th><th>Descripción</th><th>Solución
+				</th> 
+			@foreach($catalogocat4 as $key)
+			{{'<tr>'.'<td>'.$key->Nombre.'</td>'.'<td>'.$key->Descripcion.'</td>'.'<td>'.$key->Solucion.'</td>'.'</tr>'}}
+			@endforeach
+			</table>  
+		</div>
+		
+		<div id="category5">
+			<table border=1 cellpadding=4 cellspacing=0>
+		<th>Nombre </th><th>Descripción</th><th>Solución
+				</th> 
+			@foreach($catalogocat5 as $key)
+			{{'<tr>'.'<td>'.$key->Nombre.'</td>'.'<td>'.$key->Descripcion.'</td>'.'<td>'.$key->Solucion.'</td>'.'</tr>'}}
+			@endforeach
+			</table>  
+		</div>
 
-</script>
+
+			
+		</section>
+		

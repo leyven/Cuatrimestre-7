@@ -32,11 +32,11 @@ class actividadController extends BaseController{
 
 	$data = Input::all();
 	//reglas de validacion
-	$reglas=$array = array('Actividad' => 'alpha_num|required', 
-						   'Descripcion'=>'alpha_num|required',
-						   'Departamento'=>'alpha_num|required',
-						   'Requerimiento'=>'alpha_num|required',						   
-						   'Encargado'=>'alpha_num|required',
+	$reglas=$array = array('Actividad' => 'required', 
+						   'Descripcion'=>'required',
+						   'Departamento'=>'required',
+						   'Requerimiento'=>'required',						   
+						   'Encargado'=>'required',
 						   'fecha_inicio'=>'date|required',
 						   'fecha_estimada'=>'date|required',
 						   'fecha_termino'=>'date|required'

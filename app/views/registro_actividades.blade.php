@@ -19,34 +19,34 @@
  @endforeach
  </ul>
 <tr>
-	<td>{{Form::label('Actividad', 'Actividad: ')}}
-	{{Form::text('Actividad')}}</td></tr>
-<tr><td>
-	{{Form::label('Prioridad', 'Prioridad: ')}}<br></td></tr>
+	<td>{{Form::label('Actividad', 'Actividad: ')}}</td>
+	<td>{{Form::text('Actividad',Input::old('Actividad'), array('placeholder'=>'Actividad','size'=>'20', 'maxlength'=>'30'))}}</td></tr>
+<!--<tr><td>
+	{{Form::label('Prioridad', 'Prioridad: ')}}<br></td></tr>-->
 <tr>
-	<td>{{Form::label('Descripcion', 'Descripcion: ')}}
+	<td>{{Form::label('Descripcion', 'Descripcion: ')}}</td>
 
-	{{Form::textarea('Descripcion')}}</td></tr>
+	<td>{{Form::textarea('Descripcion',Input::old('Descripción'), array('placeholder'=>'Descripción','cols'=>'30','rows'=>'10'))}}</td></tr>
+<tr>
+	<td>{{Form::label('Departamento', 'Departamento al que pertenece: ')}}</td>
+	<td>{{Form::text('Departamento',Input::old('Departamento'), array('placeholder'=>'Departamento','size'=>'20', 'maxlength'=>'30'))}}</td></tr>
 <tr><td>
-	{{Form::label('Departamento', 'Departamento al que pertenece: ')}}
-	{{Form::text('Departamento')}}</td></tr>
+	{{Form::label('Requerimiento', 'Requerimiento: ')}}</td>
+	<td>{{Form::text('Requerimiento',Input::old('Requerimiento'), array('placeholder'=>'Requerimiento','size'=>'20', 'maxlength'=>'30'))}}</td></tr>
 <tr><td>
-	{{Form::label('Requerimiento', 'Requerimiento: ')}}
-	{{Form::text('Requerimiento')}}</td></tr>
+	{{Form::label('Encargado', 'Encargado: ')}}</td>
+	<td>{{Form::text('Encargado',Input::old('Encargado'), array('placeholder'=>'Encargado','size'=>'20', 'maxlength'=>'30'))}}</td></tr>
 <tr><td>
-	{{Form::label('Encargado', 'Encargado: ')}}
-	{{Form::text('Encargado')}}</td></tr>
+	{{Form::label('Fecha/Hora', 'Fecha/Hora de Inicio: ')}}</td>
+	<td>{{Form::custom('date', 'fecha_inicio')}}
+	{{Form::custom('time', 'hora_inicio')}}<tr></td>
 <tr><td>
-	{{Form::label('Fecha/Hora', 'Fecha/Hora de Inicio: ')}}
-	{{Form::custom('date', 'fecha_inicio')}}
-	{{Form::custom('time', 'hora_inicio')}}<tr><td>
+	{{Form::label('FechaE', 'Fecha estimada de término: ')}}</td>
+	<td>{{Form::custom('date', 'fecha_estimada')}}</tr></td>
 <tr><td>
-	{{Form::label('FechaE', 'Fecha estimada de término: ')}}
-	{{Form::custom('date', 'fecha_estimada')}}</tr></td>
-<tr><td>
-	{{Form::label('Fecha/HoraT', 'Fecha/Hora de Término: ')}}
-	{{Form::custom('date', 'fecha_termino')}}
-	{{Form::custom('time', 'hora_termino')}}</tr></td>
+	{{Form::label('Fecha/HoraT', 'Fecha/Hora de Término: ')}}</td>
+	<td>{{Form::custom('date', 'fecha_termino')}}
+	{{Form::custom('time', 'hora_termino')}}</td></tr>
 <tr><td>
 	{{Form::submit('Guardar')}}</tr></td>
 {{Form::close()}}	

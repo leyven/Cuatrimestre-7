@@ -42,7 +42,7 @@
 			<tr>
 				<td>Descripcion: </td>
 				<td>
-				{{Form::textarea('Descripcion',Input::old('Descripcion'), array('placeholder'=>'Descripcion','cols'=>'30','rows'=>'20'))}}
+				{{Form::textarea('Descripcion',Input::old('Descripcion'), array('placeholder'=>'Descripcion','cols'=>'30','rows'=>'10'))}}
 			</tr>
 			<tr>
 				<td>Caputurisa:</td>

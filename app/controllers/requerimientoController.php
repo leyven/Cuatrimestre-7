@@ -28,12 +28,12 @@ public function mostrar(){
 
 	$data = Input::all();
 	//reglas de validacion
-	$reglas=$array = array('Folio' => 'alpha_num|required', 
-						   'Prioridad'=>'alpha_num|required',
-						   'Nombre'=>'alpha_num|required',
+	$reglas=$array = array('Folio' => 'numeric|required', 
+						   'Prioridad'=>'required',
+						   'Nombre'=>'required',
 						   'fecha_captura'=>'date|required',						   
-						   'Descripcion'=>'alpha_num|required',
-						   'Capturista'=>'alpha_num|required'
+						   'Descripcion'=>'required',
+						   'Capturista'=>'required'
 						   );
 	// Crear instancia del validador.
  	$validador = Validator::make($data, $reglas);

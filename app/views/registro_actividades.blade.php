@@ -1,58 +1,51 @@
-<head>
+<html>
+<head>	
 	<meta charset="UTF-8">
 	<!--<link rel='shortcut icon' href='img/logo-ico.png' type='image/png'>-->
 	<title>Control de Actividades</title>
 	{{ HTML::style('css/estilo.css') }}
+	
 </head>
 
 <body>
 	<img id="logo"src="img/buenaventura.gif" alt="">
 	<center><h1>Registro de Actividades</h1></center>
 	<div id="container">
-
+<center><table>
 	{{Form::open(array('action' => 'actividadController@registro'))}}
-<br>
-	{{Form::label('Actividad', 'Actividad: ')}}
-	{{Form::text('Actividad')}}
-<br>
-<br>
-	{{Form::label('Prioridad', 'Prioridad: ')}}<br>
-<br>
-	{{Form::label('Descripcion', 'Descripcion: ')}}
-<br>
-	{{Form::textarea('Descripcion')}}
-<br>
-<br>
+<tr>
+	<td>{{Form::label('Actividad', 'Actividad: ')}}
+	{{Form::text('Actividad')}}</td></tr>
+<tr><td>
+	{{Form::label('Prioridad', 'Prioridad: ')}}<br></td></tr>
+<tr>
+	<td>{{Form::label('Descripcion', 'Descripcion: ')}}
+
+	{{Form::textarea('Descripcion')}}</td></tr>
+<tr><td>
 	{{Form::label('Departamento', 'Departamento al que pertenece: ')}}
-	{{Form::text('Departamento')}}
-<br>
-<br>
+	{{Form::text('Departamento')}}</td></tr>
+<tr><td>
 	{{Form::label('Requerimiento', 'Requerimiento: ')}}
-	{{Form::text('Requerimiento')}}
-<br>
-<br>
+	{{Form::text('Requerimiento')}}</td></tr>
+<tr><td>
 	{{Form::label('Encargado', 'Encargado: ')}}
-	{{Form::text('Encargado')}}
-<br>
-<br>
+	{{Form::text('Encargado')}}</td></tr>
+<tr><td>
 	{{Form::label('Fecha/Hora', 'Fecha/Hora de Inicio: ')}}
 	{{Form::custom('date', 'fecha_inicio')}}
-	{{Form::custom('time', 'hora_inicio')}}
-<br>	
-<br>
+	{{Form::custom('time', 'hora_inicio')}}<tr><td>
+<tr><td>
 	{{Form::label('FechaE', 'Fecha estimada de término: ')}}
-	{{Form::custom('date', 'fecha_estimada')}}
-<br>
-<br>
+	{{Form::custom('date', 'fecha_estimada')}}</tr></td>
+<tr><td>
 	{{Form::label('Fecha/HoraT', 'Fecha/Hora de Término: ')}}
 	{{Form::custom('date', 'fecha_termino')}}
-	{{Form::custom('time', 'hora_termino')}}
-<br>	
-<br>
-
-	{{Form::submit('Guardar')}}
+	{{Form::custom('time', 'hora_termino')}}</tr></td>
+<tr><td>
+	{{Form::submit('Guardar')}}</tr></td>
 {{Form::close()}}	
-	
+	</table>
 		<!--<form>
 			<label>Fecha/Hora Inicio: </label>
 			<input type="date" required>
@@ -65,4 +58,7 @@
 		</form>-->
 
 	</div>
+	
+	
 </body>
+</html>

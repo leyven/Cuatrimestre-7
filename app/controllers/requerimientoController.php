@@ -1,7 +1,7 @@
 <?php 
 
 
-class requerimientoController extends BaseController{
+class RequerimientoController extends BaseController{
 public function mostrar(){
 
 		try{
@@ -10,7 +10,7 @@ public function mostrar(){
 		catch(ErrorException $e){
 
 		}
-		return View::make('actividades')->with('var', $var);
+		return View::make('CatalogoAyuda')->with('var', $var);
 	}
 
 		public function registro_requerimientos(){
@@ -24,23 +24,41 @@ public function mostrar(){
 		
 		$mensaje1='datos almacenados';
 		$error='datos incorrectos';
-		try{
-		 $bd = DB::table('requerimientos')->insertGetId(array(
+		
+
+	$data = Input::all();
+	//reglas de validacion
+	$reglas=$array = array('Folio' => 'alpha_num', 
+						   'Prioridad'=>'alpha_num',
+						   'Nombre'=>'alpha_num',
+						   'fecha_captura'=>'date',						   
+						   'Descripcion'=>'alpha_num',
+						   'Capturista'=>'alpha_num'
+						   );
+	// Crear instancia del validador.
+ 	$validador = Validator::make($data, $reglas);
+
+ 	 if($validador->passes()) {
+ // Normalmente haríamos algo con los datos.
+
+		 $id = DB::table('requerimientos')->insertGetId(array(
 			'Folio'=>$folio,
 			'Prioridad'=>$prioridad,
-			'Nombre'=>$Nombre,
+			'Nombre'=>$nombre,
 			'fecha_Captura'=>$fechacap,
 			'hora_Captura'=>$horacap,
 			'Descripcion'=>$descripcion,
 			'Capturista'=>$capturista));
 			
 		return Redirect::to('registro_requerimientos')->with('mensaje', $mensaje1);
-		}
-		
-		catch(ErrorException $e){
-			return View::make('registro_requerimientos')->with('mensaje', $error);
-		}	
+ 	}
+ 	 		
+return Redirect::to('registro_requerimientos')->withErrors($validador);
+	
 
+		
+		
+	
 	}
 	
 }

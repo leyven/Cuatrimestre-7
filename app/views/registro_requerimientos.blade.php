@@ -10,8 +10,16 @@
 	<img id="logo"src="img/buenaventura.gif" alt="">
 	<center><h1>Registro de Requerimientos</h1></center>
 	<div id="container">
+	
 	<center><table>
 		{{Form::open(array('action' => 'requerimientoController@registro_requerimientos'))}}
+				<ul class="errors">
+ @foreach($errors->all() as $message)
+ <li>{{ $message }}</li>
+ @endforeach
+ </ul>
+
+
 				<tr>
 				<td>Folio:</td>
 				<td>{{Form::text('Folio',Input::old('Folio'), array('placeholder'=>'Folio','size'=>'20', 'maxlength'=>'30'))}}</td>

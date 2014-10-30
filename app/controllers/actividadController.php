@@ -28,7 +28,25 @@ class actividadController extends BaseController{
 		
 		$mensaje1='datos almacenados';
 		$error='datos incorrectos';
-		try{
+
+
+	$data = Input::all();
+	//reglas de validacion
+	$reglas=$array = array('Actividad' => 'alpha_num|required', 
+						   'Descripcion'=>'alpha_num|required',
+						   'Departamento'=>'alpha_num|required',
+						   'Requerimiento'=>'alpha_num|required',						   
+						   'Encargado'=>'alpha_num|required',
+						   'fecha_inicio'=>'date|required',
+						   'fecha_estimada'=>'date|required',
+						   'fecha_termino'=>'date|required'
+
+						   );
+	// Crear instancia del validador.
+ 	$validador = Validator::make($data, $reglas);
+
+ 	 if($validador->passes()) {
+ 	 	try{
 		 $bd = DB::table('actividad')->insertGetId(array(
 			'nombre_Actividad'=>$Actividad,
 			'Encargado'=>$encargado,
@@ -46,7 +64,11 @@ class actividadController extends BaseController{
 		
 		catch(ErrorException $e){
 			return View::make('registro_actividades')->with('mensaje', $error);
-		}	
+		}
+ 	 }
+ 	 return Redirect::to('registro_actividades')->withErrors($validador);
+
+			
 
 	}
 	

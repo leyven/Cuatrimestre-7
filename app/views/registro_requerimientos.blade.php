@@ -19,7 +19,6 @@
  @endforeach
  </ul>
 
-
 				<tr>
 				<td>Folio:</td>
 				<td>{{Form::text('Folio',Input::old('Folio'), array('placeholder'=>'Folio','size'=>'20', 'maxlength'=>'30'))}}</td>

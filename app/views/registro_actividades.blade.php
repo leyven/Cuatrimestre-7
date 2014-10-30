@@ -13,6 +13,11 @@
 	<div id="container">
 <center><table>
 	{{Form::open(array('action' => 'actividadController@registro'))}}
+<ul class="errors">
+ @foreach($errors->all() as $message)
+ <li>{{ $message }}</li>
+ @endforeach
+ </ul>
 <tr>
 	<td>{{Form::label('Actividad', 'Actividad: ')}}
 	{{Form::text('Actividad')}}</td></tr>

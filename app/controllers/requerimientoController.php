@@ -28,7 +28,7 @@ public function mostrar(){
 		 $bd = DB::table('requerimientos')->insertGetId(array(
 			'Folio'=>$folio,
 			'Prioridad'=>$prioridad,
-			'Nombre'=>$Nombre,
+			'Nombre'=>$nombre,
 			'fecha_Captura'=>$fechacap,
 			'hora_Captura'=>$horacap,
 			'Descripcion'=>$descripcion,

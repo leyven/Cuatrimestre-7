@@ -12,6 +12,18 @@ class actividadController extends BaseController{
 		}
 		return View::make('actividades')->with('var', $var);
 	}
+public function mostrarAdmin(){
+
+		try{
+				$var = DB::table('actividad')-> get();
+		}
+		catch(ErrorException $e){
+
+		}
+		return View::make('Admin')->with('var', $var);
+	}
+
+
 
 	public function registro(){
 			

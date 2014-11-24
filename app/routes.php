@@ -15,7 +15,7 @@ Route::get('/CatalogoAyuda', 'CatalogoController@mostrarCatalogo');
 Route::get('/actividades', 'actividadController@mostrar');
 
 Route::get('/admin', 'actividadController@mostrarAdmin');
-
+Route::post('/admin', 'AdminController@editar');
 
 Route::post('/registro_actividades', 'actividadController@registro');
 Route::post('/registro_requerimientos', 'requerimientoController@registro_requerimientos');

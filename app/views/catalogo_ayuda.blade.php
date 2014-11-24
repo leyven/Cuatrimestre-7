@@ -1,14 +1,13 @@
-<<<<<<< HEAD
 {{ HTML::style('menu1.css') }}
-=======
 
 {{ HTML::style('css/estilo.css') }}
 {{ HTML::style('css/menu1.css') }}
->>>>>>> 74a25221b93c033fcf452fdb8960d178f93afc3b
+
 {{ HTML::script('js/jquery.js') }}
 {{ HTML::script('js/ocultify.js') }}
 
-<title>Inicio</title>
+<title>Catálogo de ayuda</title>
+<img id="logo"src="img/buenaventura.gif" alt="">
 <div id="catalogo">
 <br><br><h1><center>Catalogo de ayuda</center></h1>
 <div id="menu">
@@ -30,7 +29,7 @@ data-Solucion="">
 	</li>
 	
 </ul>
-</div><br><br><br><br><br><br>
+</div><center>
 		<section id="contenido">
 	        
 		
@@ -90,3 +89,4 @@ data-Solucion="">
 			
 		</section>
 		
+</center>

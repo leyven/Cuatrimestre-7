@@ -12,6 +12,10 @@
 		<form action="">
 			<center><table>
 				<tr>
+					<td>Folio:</td>
+					<td><!--AQUI VA EL FOLIO --></td>
+				</tr>
+				<tr>
 					<td>Actividad: </td>
 					<td><input type="text"placeholder="Actividad" size="15" maxlength="30"required></td>
 				</tr>

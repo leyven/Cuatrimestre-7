@@ -12,9 +12,9 @@
 	<div id="container">
 		<form action="">
 			<center><table>
-							<tr>
+			<tr>
 				<td>Folio:</td>
-				<td><input type="text"placeholder="Folio" size="20" maxlength="30"required></td>
+				<td><!--AQUI VA EL FOLIO --></td>
 			</tr>
 			<tr>
 				<td>Prioridad: </td>

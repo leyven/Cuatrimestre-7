@@ -20,7 +20,7 @@ Route::post('/admin', 'AdminController@editar');
 Route::post('/registro_actividades', 'actividadController@registro');
 Route::post('/registro_requerimientos', 'requerimientoController@registro_requerimientos');
 
-
+Route::get('/requerimientos', 'RequerimientosController@mostrarRequerimientos');	
 
 
 // esta sera la ruta principal de nuestra aplicación
@@ -55,7 +55,7 @@ Route::post('login', function(){
  
     // la función attempt se encarga automáticamente se hacer la encriptación de la clave para ser comparada con la que esta en la base de datos. 
     if (Auth::attempt( array('Nombre' => Input::get('Nombre'), 'password' => Input::get('password') ), true )){
-        return Redirect::to('inicio');
+		return Redirect::to('/requerimientos');	
     }else{
         return Redirect::to('login')->with('mensaje_login', 'Ingreso invalido');
     }
@@ -69,14 +69,16 @@ Route::post('login', function(){
 Route::group(array('before' => 'auth'), function()
 {
     
-    Route::get('inicio', function(){
-        echo 'Bienvenido ';
-        
+    Route::get('sesión_iniciada', function(){
+              
         // Con la función Auth::user() podemos obtener cualquier dato del usuario 
         // que este en la sesión, en este caso usamos su correo y su id
         // Esta función esta disponible en cualquier parte del código
         // siempre y cuando haya un usuario con sesión iniciada
-        echo 'Bienvenido '. Auth::user()->Nombre . ', su Id es: '.Auth::user()->id ;
+        echo 'Bienvenido '. Auth::user()->Nombre . ', su Id es: '.Auth::user()->id .', tipo de usuario: '. Auth::user()->Tipo .', Departamento: '. Auth::user()->Departamento;
+		
+		$requerimientos = DB::table('requerimientos')->get();
+		
     });
 });
 

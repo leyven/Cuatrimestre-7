@@ -7,22 +7,22 @@ Class Usuarios extends Eloquent implements UserInterface{
 
 public function getRememberToken()
 {
-    return $this->remember_token;
+    return 0;//$this->remember_token;
 }
 
 public function setRememberToken($value)
 {
-    $this->remember_token = $value;
+    return 0;//$this->remember_token = $value;
 }
 
 public function getRememberTokenName()
 {
-    return 'remember_token';
+    return 0;//'remember_token';
 }
  
  
     protected $table = 'perfil';
-    protected $fillable = array('Nombre','password');
+    protected $fillable = array('Nombre','password','Departamento','Tipo');
  
     // este metodo se debe implementar por la interfaz
     public function getAuthIdentifier()

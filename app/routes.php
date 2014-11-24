@@ -30,6 +30,9 @@ Route::get('login', function(){
     return View::make('login'); 
 });
  
+ Route::get('registro', function(){
+    return View::make('registro'); 
+});
 // esta ruta sera para crear al usuario 
 Route::post('registro', function(){
  
@@ -42,7 +45,7 @@ Route::post('registro', function(){
  
     Usuarios::create($input);
  
-    return Redirect::to('login')->with('mensaje_registro', 'Usuario Registrado');
+    return Redirect::to('registro')->with('mensaje_registro', 'Usuario Registrado');
 });
  
 // esta ruta servirá para iniciar la sesión por medio del correo y la clave 
@@ -82,6 +85,5 @@ Route::group(array('before' => 'auth'), function()
 
 
 
-/*
->>>>>>> 31b6799a24b905ffe34b156f045b8d193ce9a55c
+
 

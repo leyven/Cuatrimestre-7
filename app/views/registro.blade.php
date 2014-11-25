@@ -20,7 +20,6 @@
     
 	{{ Form::label('tipo', 'Tipo de usuario: '); }}
 	{{ Form::select('Tipo', array(
-		'Administrador' => 'Administrador',
 		'Gerente' => 'Gerente',
 		'Encargado' => 'Encargado'))}}<br><br>
 	

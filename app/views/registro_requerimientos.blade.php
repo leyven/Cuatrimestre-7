@@ -10,6 +10,13 @@
 	<img id="logo"src="img/buenaventura.gif" alt="">
 	<center><h1>Registro de Requerimientos</h1></center>
 	<div id="container">
+<<<<<<< HEAD
+		<form action="">
+			<center><table>
+			<tr>
+				<td>Folio:</td>
+				<td><!--AQUI VA EL FOLIO --></td>
+=======
 	
 	<center><table>
 		{{Form::open(array('action' => 'requerimientoController@registro_requerimientos'))}}
@@ -22,6 +29,7 @@
 				<tr>
 				<td>Folio:</td>
 				<td>{{Form::text('Folio',Input::old('Folio'), array('placeholder'=>'Folio','size'=>'20', 'maxlength'=>'30'))}}</td>
+>>>>>>> aa2965db7334c44c0b8fd91a43cfbdd3c110c311
 			</tr>
 			<tr>
 				<td>Prioridad: </td>

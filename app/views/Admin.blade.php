@@ -25,6 +25,7 @@
 				<th>Descripcion</th>
 				<th>Asignar</th>
 				<th>Editar</th>
+				<th>Eliminar</th>
 
 			</tr> 
 			@foreach ($var as $variable)
@@ -39,6 +40,7 @@
 			data-inicio="{{$variable -> fecha_Inicio}}"
 			data-termino="{{$variable -> fecha_Termino}}"
 			data-descripcion="{{$variable -> descripcion}}"
+			data-key="{{$variable -> descripcion}}"
 			>
 			
 
@@ -50,15 +52,20 @@
 				<td> {{$variable -> fecha_Termino}} </td> 
 				<td> {{$variable -> descripcion}} </td> 
 				<td> <button name="id"value="id_Actividad">{{$variable -> id_Actividad}}</button> </td>
-				<td> <button class="mostrar" name="id"value="id_Actividad">click</button> </td> 	
-
-							
+				<td> <button class="mostrar" name="id"value="id_Actividad">click</button> </td>
+				<td> 	
+				{{Form::open(array('action' => 'actividadController@eliminar'))}}
+				<input type="hidden"name="eliminar"value="{{$variable -> id_Actividad}}">
+				<input type="hidden"name="type"value="eliminar">
+				<input type="submit" value="eliminar">
+				{{Form::close()}}
+					</td>		
 			</tr> 
 			</div>
 			@endforeach
 			 <div id="edicion"> 
 			 {{Form::open(array('action' => 'AdminController@editar'))}}
-			 <form>
+			 
   			Folio 				<input id="Cfolio" type="text" name="folio"> </br>
   			Nombre Actividades  <input id="Cactividad" type="text" name="actividad"> </br>
   			Id usuario 			<input id="CidUsuario" type="text" name="idUsuario"> </br>
@@ -66,7 +73,8 @@
   			Fecha inicio 		<input id="Cinicio" type="text" name="inicio"> </br>
   			Fecha termino 		<input id="Ctermino" type="text" name="termino"> </br>
   			descripcion 		<textarea  rows="5" cols="40" id="Cdescripcion" name="Descripcion" ></textarea></br>
-  								<input  type="submit" id="send"   >
+  								<input type="hidden"name="type"value="editar">
+  								<input  type="submit" id="send"value="editar"   >
   			{{Form::close()}}
     		</div>
 		</table> 

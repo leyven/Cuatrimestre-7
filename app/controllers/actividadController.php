@@ -23,7 +23,15 @@ public function mostrarAdmin(){
 		return View::make('Admin')->with('var', $var);
 	}
 
-
+public function elimsinar(){
+	try{
+	$target= $_POST["eliminar"];
+	DB::table('actividad')->where('id_Actividad', '=', $target)->delete();
+	 return Redirect::to('admin');
+	}
+	catch(ErrorException $e){return Redirect::to('admin');
+			}
+}
 
 	public function registro(){
 			

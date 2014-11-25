@@ -3,11 +3,22 @@
 
 class AdminController extends BaseController{
 
-
+public function eliminar(){
+	try{
+	$target= $_POST["eliminar"];
+	DB::table('actividad')->where('id_Actividad', '=', $target)->delete();
+	 return Redirect::to('admin');
+	}
+	catch(ErrorException $e){return Redirect::to('admin');
+			}
+}
 
 
 	public function editar(){
-			
+				$decision= $_POST["type"];
+				if ($decision=="editar"){
+
+
 		$folio= $_POST["folio"];
 		$actividad= $_POST["actividad"];
 		$idUsuario= $_POST["idUsuario"];
@@ -55,12 +66,16 @@ class AdminController extends BaseController{
 			return View::make('admin')->with('mensaje', $error);
 		}
  	 }
- 	 return Redirect::to('admin')->withErrors($validador);
+ 	 return Redirect::to('registro')->withErrors($validador);
 
 			
 
 	}
-	
+	else{
+		return $this->eliminar();
+	}
+	}
+
 }
 
 

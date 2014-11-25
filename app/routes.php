@@ -16,6 +16,7 @@ Route::get('/actividades', 'actividadController@mostrar');
 
 Route::get('/admin', 'actividadController@mostrarAdmin');
 Route::post('/admin', 'AdminController@editar');
+Route::delete('/admin', 'actividadController@eliminar');
 
 Route::post('/registro_actividades', 'actividadController@registro');
 Route::post('/registro_requerimientos', 'requerimientoController@registro_requerimientos');

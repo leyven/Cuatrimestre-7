@@ -13,11 +13,11 @@ Route::get('/registro_requerimientos', function()
 
 Route::get('/CatalogoAyuda', 'CatalogoController@mostrarCatalogo');
 Route::get('/actividades', 'actividadController@mostrar');
-<<<<<<< HEAD
+
 Route::get('/registro_actividades', 'actividadController@registro');
 Route::get('/registro_requerimientos', 'requerimientoController@registro');
 Route::get('/inicioSesion','inicioController@sesion');
-=======
+
 
 Route::get('/admin', 'actividadController@mostrarAdmin');
 Route::post('/admin', 'AdminController@editar');
@@ -93,6 +93,4 @@ Route::group(array('before' => 'auth'), function()
 
 
 
-
->>>>>>> aa2965db7334c44c0b8fd91a43cfbdd3c110c311
 

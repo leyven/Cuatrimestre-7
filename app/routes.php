@@ -14,8 +14,8 @@ Route::get('/registro_requerimientos', function()
 Route::get('/CatalogoAyuda', 'CatalogoController@mostrarCatalogo');
 Route::get('/actividades', 'actividadController@mostrar');
 
-Route::get('/registro_actividades', 'actividadController@registro');
-Route::get('/registro_requerimientos', 'requerimientoController@registro');
+
+
 Route::get('/inicioSesion','inicioController@sesion');
 
 
@@ -33,6 +33,18 @@ Route::get('/requerimientos', 'RequerimientosController@mostrarRequerimientos');
 // esta ruta debe ser publica y por lo tanto no debe llegar el filtro auth
 Route::get('login', function(){
     return View::make('login'); 
+});
+
+Route::get('login2', function(){
+    return View::make('login2'); 
+});
+
+Route::get('login3', function(){
+    return View::make('login3'); 
+});
+
+Route::get('login4', function(){
+    return View::make('login4'); 
 });
  
  Route::get('registro', function(){
@@ -60,12 +72,67 @@ Route::post('login', function(){
  
     // la función attempt se encarga automáticamente se hacer la encriptación de la clave para ser comparada con la que esta en la base de datos. 
     if (Auth::attempt( array('Nombre' => Input::get('Nombre'), 'password' => Input::get('password') ), true )){
+		
 		return Redirect::to('/requerimientos');	
     }else{
         return Redirect::to('login')->with('mensaje_login', 'Ingreso invalido');
     }
  
 });
+
+
+Route::post('login2', function(){
+ 
+    // la función attempt se encarga automáticamente se hacer la encriptación de la clave para ser comparada con la que esta en la base de datos. 
+
+	
+	if (Auth::attempt( array('Nombre' => Input::get('Nombre'), 'password' => Input::get('password') ), true )){
+		
+		return Redirect::to('/actividades');	
+		
+		
+    }else{
+        return Redirect::to('login2')->with('mensaje_login', 'Ingreso invalido');
+    }
+	
+ 
+});
+
+
+Route::post('login3', function(){
+ 
+    // la función attempt se encarga automáticamente se hacer la encriptación de la clave para ser comparada con la que esta en la base de datos. 
+
+	
+	if (Auth::attempt( array('password' => Input::get('password') ), true )){
+		
+		return Redirect::to('/admin');	
+		
+		
+    }else{
+        return Redirect::to('login3')->with('mensaje_login', 'Ingreso invalido');
+    }
+	
+ 
+});
+
+Route::post('login4', function(){
+ 
+    // la función attempt se encarga automáticamente se hacer la encriptación de la clave para ser comparada con la que esta en la base de datos. 
+
+	
+	if (Auth::attempt( array('password' => Input::get('password') ), true )){
+		
+		return Redirect::to('/AdminA');	
+		
+		
+    }else{
+        return Redirect::to('login4')->with('mensaje_login', 'Ingreso invalido');
+    }
+	
+ 
+});
+
  
 // Por ultimo crearemos un grupo con el filtro auth. 
 // Para todas estas rutas el usuario debe haber iniciado sesión. 
@@ -87,7 +154,7 @@ Route::group(array('before' => 'auth'), function()
     });
 });
 
-
+Route::get('logout', 'AuthController@logOut');
 
 
 

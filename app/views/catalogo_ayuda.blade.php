@@ -90,3 +90,7 @@ data-Solucion="">
 		</section>
 		
 </center>
+</div>
+
+<br><br><br><center>
+{{HTML::link('/registro_requerimientos','ir a registro de requerimientos');}}

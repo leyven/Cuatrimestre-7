@@ -27,11 +27,6 @@ $(".5").click(function(evnt){
 esconder();
  $("#category5").show(1000);
 });
-
-
-
-
-
 });
 
 
@@ -56,6 +51,9 @@ function toggle(elemento) {
 			}
 		}
 }
+
+
+
 function esconder(){
   $("#category1").hide();
   $("#category2").hide();
@@ -69,6 +67,7 @@ function esconder(){
   $("#depto4").hide();
   $("#depto5").hide();
 
+  
 }
 
 

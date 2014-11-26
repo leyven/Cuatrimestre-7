@@ -12,9 +12,13 @@
 <?php
 echo 'Bienvenido '. Auth::user()->Nombre . ', su Id es: '.Auth::user()->id .', tipo de usuario: '. Auth::user()->Tipo .', Departamento: '. Auth::user()->Departamento;
 $depto = Auth::user()->Departamento;
+$tipo = Auth::user()->Tipo;
 ?>
-
-<div id="catalogo">
+<br><br><center>
+ 
+<center>{{HTML::link('/CatalogoAyuda','ir a catalogo de ayuda');}}<br><br>
+</center>
+<div id="requerimiento">
 <br><br><h1><center>Requerimientos</center></h1>
 <center>
 <br><br>  <input type='button' name='nTarjeta'size='20' maxLength='60' value ="{{$depto}}" onclick="toggle(this)"><br><br>
@@ -67,3 +71,6 @@ $depto = Auth::user()->Departamento;
 		</section>
 		
 </center>
+</div>
+
+<br><br><a href="logout">Cerrar sesión.</a>

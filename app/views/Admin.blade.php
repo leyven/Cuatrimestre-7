@@ -69,6 +69,7 @@
   								<input  type="submit" id="send"   >
   			{{Form::close()}}
     		</div>
+			<a href="login2">Cerrar sesión</a>
 		</table> 
 	</div>
 </body>

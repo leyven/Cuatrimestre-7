@@ -8,12 +8,19 @@ class RequerimientosController extends BaseController {
 			$req4 = DB::table('requerimientos')->where('Departamento','=','Gerencia')->get();
 			$req5 = DB::table('requerimientos')->where('Departamento','=','Compras')->get();
 			
+			
+			
 			}catch(ErrorException $e){}
+			
+			
+			
 			
 			return View::make('requerimientos')->with('req1', $req1)->with('req2', $req2)->with('req3', $req3)->with('req4', $req4)->with('req5', $req5);
 		
 			
 		}
+		
+
  
 }
 ?>

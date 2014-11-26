@@ -21,8 +21,7 @@ Route::post('/AdminA', 'CatalogoController@administrar');
 
 
 //fin
-Route::get('/registro_actividades', 'actividadController@registro');
-Route::get('/registro_requerimientos', 'requerimientoController@registro');
+
 Route::get('/inicioSesion','inicioController@sesion');
 
 

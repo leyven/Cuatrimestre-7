@@ -49,8 +49,8 @@ public function mostrar(){
 			'hora_Captura'=>$horacap,
 			'Descripcion'=>$descripcion,
 			'Capturista'=>$capturista));
-			
-		return Redirect::to('registro_requerimientos')->with('mensaje', $mensaje1);
+	echo "psses";		
+	//	return Redirect::to('registro_requerimientos')->with('mensaje', $mensaje1);
  	}
  	 		
 return Redirect::to('registro_requerimientos')->withErrors($validador);

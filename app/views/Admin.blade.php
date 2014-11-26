@@ -10,9 +10,9 @@
 </head>
 
 <body>
-<h1>Specially designed to manage things</h1>
+
 	<img id="logo"src="img/buenaventura.gif" alt="">
-	<center><h1>ACTIVIDADES</h1></center>
+	<center><h1>Administracion de Actividades</h1></center>
 	<div id="container">
 		<table> 
 			<tr> 
@@ -23,7 +23,7 @@
 				<th>Fecha inicio</th>
 				<th>Fecha termino</th>
 				<th>Descripcion</th>
-				<th>Asignar</th>
+				
 				<th>Editar</th>
 				<th>Eliminar</th>
 
@@ -51,7 +51,7 @@
 				<td> {{$variable -> fecha_Inicio}} </td> 
 				<td> {{$variable -> fecha_Termino}} </td> 
 				<td> {{$variable -> descripcion}} </td> 
-				<td> <button name="id"value="id_Actividad">{{$variable -> id_Actividad}}</button> </td>
+				
 				<td> <button class="mostrar" name="id"value="id_Actividad">click</button> </td>
 				<td> 	
 				{{Form::open(array('action' => 'actividadController@eliminar'))}}

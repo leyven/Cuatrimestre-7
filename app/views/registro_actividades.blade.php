@@ -11,7 +11,7 @@
 	<img id="logo"src="img/buenaventura.gif" alt="">
 	<center><h1>Registro de Actividades</h1></center>
 	<div id="container">
-<<<<<<< HEAD
+
 		<form action="">
 			<center><table>
 				<tr>
@@ -44,7 +44,7 @@
 						<input type="text" required placeholder="dd/mm/aaaa" size="15" maxlength="30"required>
 						<br><input type="text"placeholder="Hora" size="15" maxlength="30"required>
 					</td>
-=======
+
 <center><table>
 	{{Form::open(array('action' => 'actividadController@registro'))}}
 <ul class="errors">
@@ -95,7 +95,7 @@
 			<input type="date" required>
 			<input type="numer"placeholder="Hora" size="15" maxlength="30"required><br><br>
 		</form>-->
->>>>>>> aa2965db7334c44c0b8fd91a43cfbdd3c110c311
+
 
 	</div>
 	

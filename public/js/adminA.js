@@ -19,13 +19,13 @@ $(".info").click(function(evnt){
 	    $variable=$(this).attr("data-descripcion"); 
 	    $("#CDescripcion").val($variable);
 	    $variable=$(this).attr("data-solucion");
-	    $("#CSolucion").val($variable);
+	    $("#CSolucion").html($variable);
 	    $variable=$(this).attr("data-idcategoria");
 	    $("#CCategoria").val($variable);
 
 	    
 	    $variable=$(this).attr("data-idcatalogo");
-	    alert($variable);
+	    
 	    $("#getval").val($variable);
 	    $variable=$(this).attr("data-termino");
 	    $("#Ctermino").val($variable);

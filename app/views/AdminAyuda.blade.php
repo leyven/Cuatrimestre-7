@@ -10,7 +10,7 @@
 
 <body>
 	<img id="logo"src="img/buenaventura.gif" alt="">
-	<center><h1>ACTIVIDADES</h1></center>
+	<center><h1>Administrador del Catalogo de ayuda</h1></center>
 	<div id="container">
 		<table> 
 			<tr> 
@@ -75,7 +75,8 @@ switch ($key -> idCategoria ) {
 			 
   			Nombre 				<input id="CNombre" type="text" name="nombre"> </br>
   			descripcion 		<textarea  rows="5" cols="40" id="CDescripcion" name="descripcion" ></textarea></br>
-  			Solucion 			<input id="CSolucion" type="text" name="solucion"> </br>
+  			Solucion 			
+  			<textarea  rows="5" cols="40" id="CSolucion" name="solucion" rows="5" cols="40"></textarea></br>
   		
 
 <?php

@@ -66,7 +66,7 @@ public function eliminar(){
 			return View::make('admin')->with('mensaje', $error);
 		}
  	 }
- 	 return Redirect::to('registro')->withErrors($validador);
+ 	 return Redirect::to('admin')->withErrors($validador);
 
 			
 

@@ -14,6 +14,13 @@ Route::get('/registro_requerimientos', function()
 Route::get('/CatalogoAyuda', 'CatalogoController@mostrarCatalogo');
 Route::get('/actividades', 'actividadController@mostrar');
 
+
+//admin de Cat Ayuda
+Route::get('/AdminA', 'CatalogoController@catalogoAdmin');
+Route::post('/AdminA', 'CatalogoController@administrar');
+
+
+//fin
 Route::get('/registro_actividades', 'actividadController@registro');
 Route::get('/registro_requerimientos', 'requerimientoController@registro');
 Route::get('/inicioSesion','inicioController@sesion');

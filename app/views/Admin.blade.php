@@ -74,7 +74,7 @@
   			Fecha termino 		<input id="Ctermino" type="text" name="termino"> </br>
   			descripcion 		<textarea  rows="5" cols="40" id="Cdescripcion" name="Descripcion" ></textarea></br>
   								<input type="hidden"name="type"value="editar">
-  								<input  type="submit" id="send"value="editar"   >
+  								<input  type="submit" id="send"value="editar">
   			{{Form::close()}}
     		</div>
 		</table> 

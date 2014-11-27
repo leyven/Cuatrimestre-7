@@ -15,12 +15,20 @@ Route::get('/CatalogoAyuda', 'CatalogoController@mostrarCatalogo');
 Route::get('/actividades', 'actividadController@mostrar');
 
 
+//admin de Cat Ayuda
+Route::get('/AdminA', 'CatalogoController@catalogoAdmin');
+Route::post('/AdminA', 'CatalogoController@administrar');
+
+
+//fin
+
 
 Route::get('/inicioSesion','inicioController@sesion');
 
 
 Route::get('/admin', 'actividadController@mostrarAdmin');
 Route::post('/admin', 'AdminController@editar');
+Route::delete('/admin', 'actividadController@eliminar');
 
 Route::post('/registro_actividades', 'actividadController@registro');
 Route::post('/registro_requerimientos', 'requerimientoController@registro_requerimientos');
@@ -156,9 +164,29 @@ Route::group(array('before' => 'auth'), function()
 
 Route::get('logout', 'AuthController@logOut');
 
+Route::get('generar', function()
+{
+    $html = '<html><body>';
+    $html.= '<p style="color:red">Generando un sencillo pdf ';
+    $html.= 'de forma realmente sencilla.</p>';
+    $html.= '</body></html>';
+    return PDF::load($html, 'A4', 'portrait')->show();
+});
+
+
+Route::get('vista', function()
+{
+    $html = View::make("hello");
+    return PDF::load($html, 'A4', 'portrait')->show();
+});
 
 
 
-
-
-
+Route::get('generar2', function()
+{
+    $html = '<html><body>';
+    $html.= '<p style="color:red">Generando un sencillo pdf ';
+    $html.= 'de forma realmente sencilla.</p>';
+    $html.= '</body></html>';
+    return PDF::load($html, 'A4', 'portrait')->download('nombreArchivoPdf');
+});

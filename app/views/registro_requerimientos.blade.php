@@ -10,10 +10,7 @@
 	<img id="logo"src="img/buenaventura.gif" alt="">
 	<center><h1>Registro de Requerimientos</h1></center>
 	<div id="container">
-			<center><table>
-			<tr>
-				<td>Folio:</td>
-				<td><!--AQUI VA EL FOLIO --></td>
+
 
 	
 	<center><table>

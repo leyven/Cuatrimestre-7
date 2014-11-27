@@ -18,6 +18,7 @@
 
 {{ Form::open(array('url' => 'login3')) }}
     <table>
+	<tr><td><center>{{ Form::label('Jefe', 'Jefe') }}</td></tr>
 	<tr><td>{{ Form::label('password', 'Contraseña:') }}</td></tr>
     <tr><td>{{ Form::password('password'); }}</td></tr>
     <tr><td><center>{{ Form::submit('Ingresar'); }}</td></tr>

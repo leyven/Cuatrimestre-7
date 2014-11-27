@@ -16,9 +16,9 @@
 @endif
 
 
-{{ Form::open(array('url' => 'login2')) }}
+{{ Form::open(array('url' => 'login4')) }}
     <table>
-	<tr><td>{{ Form::label('Nombre', 'Administrador:') }}</td></tr>
+	<tr><td><center>{{ Form::label('Nombre', 'Administrador') }}</td></tr>
    	<tr><td>{{ Form::label('password', 'Contraseña:') }}</td></tr>
     <tr><td>{{ Form::password('password'); }}</td></tr>
     <tr><td><center>{{ Form::submit('Ingresar'); }}</td></tr>

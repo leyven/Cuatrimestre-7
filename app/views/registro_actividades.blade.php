@@ -12,6 +12,42 @@
 	<center><h1>Registro de Actividades</h1></center>
 	<div id="container">
 
+<<<<<<< HEAD
+=======
+		<form action="">
+			<center><table>
+				<tr>
+					<td>Folio:</td>
+					<td><!--AQUI VA EL FOLIO --></td>
+				</tr>
+				<tr>
+					<td>Actividad: </td>
+					<td><input type="text"placeholder="Actividad" size="15" maxlength="30"required></td>
+				</tr>
+				<tr>
+					<td>Prioridad:</td>
+					<td><!--Aqui va el label con los datos de la prioridad--></td>
+				</tr>
+				<tr>
+					<td>Departamento</td>
+					<td><input type="text"placeholder="Departamento" size="15" maxlength="30"required></td>
+				</tr>
+				<tr>
+					<td>Requerimiento al<br>que pertenece:</td>
+					<td><input type="text"placeholder="Requerimiento" size="15" maxlength="30"required></td>
+				</tr>
+				<tr>
+					<td>Encargado:</td>
+					<td><input type="text"placeholder="Encargado" size="15" maxlength="30"required></td>
+				</tr>
+				<tr>
+					<td>Fecha/Hora Inicio:</td>
+					<td>
+						<input type="text" required placeholder="dd/mm/aaaa" size="15" maxlength="30"required>
+						<br><input type="text"placeholder="Hora" size="15" maxlength="30"required>
+					</td>
+
+>>>>>>> b52a6d97b738a4cb583edec479d554304d82408f
 <center><table>
 	{{Form::open(array('action' => 'actividadController@registro'))}}
 <ul class="errors">
@@ -62,6 +98,10 @@
 			<input type="date" required>
 			<input type="numer"placeholder="Hora" size="15" maxlength="30"required><br><br>
 		</form>-->
+<<<<<<< HEAD
+=======
+
+>>>>>>> b52a6d97b738a4cb583edec479d554304d82408f
 
 	</div>
 	

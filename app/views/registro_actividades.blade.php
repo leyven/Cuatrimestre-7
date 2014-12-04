@@ -12,6 +12,8 @@
 	<center><h1>Registro de Actividades</h1></center>
 	<div id="container">
 
+<<<<<<< HEAD
+=======
 		<form action="">
 			<center><table>
 				<tr>
@@ -45,6 +47,7 @@
 						<br><input type="text"placeholder="Hora" size="15" maxlength="30"required>
 					</td>
 
+>>>>>>> b52a6d97b738a4cb583edec479d554304d82408f
 <center><table>
 	{{Form::open(array('action' => 'actividadController@registro'))}}
 <ul class="errors">
@@ -95,7 +98,10 @@
 			<input type="date" required>
 			<input type="numer"placeholder="Hora" size="15" maxlength="30"required><br><br>
 		</form>-->
+<<<<<<< HEAD
+=======
 
+>>>>>>> b52a6d97b738a4cb583edec479d554304d82408f
 
 	</div>
 	

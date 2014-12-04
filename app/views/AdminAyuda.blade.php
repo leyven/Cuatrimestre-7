@@ -98,6 +98,7 @@ foreach ($categorias as $key ) {
   								<input  type="submit" id="send"value="editar">
   			{{Form::close()}}
     		</div>
+			<br><br><a href="login">Cerrar sesión.</a>
 		</table> 
 	</div>
 </body>

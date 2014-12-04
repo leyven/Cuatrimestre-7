@@ -32,5 +32,8 @@
 			</tr> 
 			@endforeach
 		</table> 
+		<br><br><a href="login2">Cerrar sesión.</a>
 	</div>
+	
+	
 </body>

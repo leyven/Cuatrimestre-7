@@ -11,10 +11,6 @@
 	<center><h1>Registro de Requerimientos</h1></center>
 	<div id="container">
 
-					<center><table>
-			<tr>
-				<td>Folio:</td>
-				<td><!--AQUI VA EL FOLIO --></td>
 
 	
 	<center><table>
@@ -58,7 +54,10 @@
 			</tr>
 			<tr>
 				<td>{{Form::submit('Guardar')}}</td>
+				<td>{{HTML::link('/requerimientos','ir a requerimientos');}}</td>
 			</tr>
+			
+			
 		{{Form::close()}}
 		</table></center>
 	</div>

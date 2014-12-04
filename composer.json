@@ -5,8 +5,12 @@
 	"license": "MIT",
 	"require": {
 		"laravel/framework": "4.2.*",
+<<<<<<< HEAD
 
 "thujohn/pdf": "dev-master"
+=======
+		"thujohn/pdf": "dev-master"
+>>>>>>> 6fc688b432c1722630c55d6b43d910787b6bf8b6
 	},
 	"autoload": {
 		"classmap": [

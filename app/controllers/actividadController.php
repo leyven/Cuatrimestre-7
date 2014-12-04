@@ -20,6 +20,16 @@ public function mostrarAdmin(){
 		catch(ErrorException $e){
 
 		}
+		// variable por notificaciones
+		$contador=0;
+		foreach ($var as $key) {
+			$key -> fecha_Termino;
+			$array[$contador]=$key;
+			$contador=$contador+1;
+		}
+		///**termino las notificaciones
+
+		
 		return View::make('Admin')->with('var', $var);
 	}
 

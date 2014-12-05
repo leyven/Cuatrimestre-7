@@ -5,7 +5,15 @@ esconder();
 
 $(".mostrar").click(function(evnt){
 		$("#edicion").show(1000);
+  $("#asignar").hide();
+	   
+    	
+	
 
+});
+$(".asignar").click(function(evnt){
+		$(".showasignar").show(1000);
+  $("#edicion").hide();
 	   
     	
 	
@@ -34,5 +42,6 @@ $(".info").click(function(evnt){
 
 function esconder(){
   $("#edicion").hide();
+    $(".showasignar").hide();
   
 }

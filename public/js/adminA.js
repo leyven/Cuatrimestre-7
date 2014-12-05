@@ -38,4 +38,5 @@ $(".info").click(function(evnt){
 function esconder(){
   $("#edicion").hide();
   
+  
 }

@@ -22,6 +22,13 @@
 	<img id="logo"src="img/buenaventura.gif" alt="">
 	<center><h1>Administración de Actividades</h1></center>
 	<div id="container">
+	<?php 
+	 ?>
+<table>
+@foreach ($notificaciones as $key)
+	{{ "la actividad ".$key->nombre_Actividad." esta proxima a vencer en la fecha ". $key->fecha_Termino}}{{"<br>"}}
+@endforeach
+</table>
 		<table> 
 			<tr> 
 				<th>Folio</th> 
@@ -31,7 +38,7 @@
 				<th>Fecha inicio</th>
 				<th>Fecha termino</th>
 				<th>Descripcion</th>
-				
+				<th>Asignar</th>
 				<th>Editar</th>
 				<th>Eliminar</th>
 
@@ -59,7 +66,18 @@
 				<td> {{$variable -> fecha_Inicio}} </td> 
 				<td> {{$variable -> fecha_Termino}} </td> 
 				<td> {{$variable -> descripcion}} </td> 
-				
+
+				<td>	<button class="asignar" name="idA">click</button>
+				<div class="showasignar">
+				{{Form::open(array('action' => 'actividadController@eliminar'))}}
+				Encargado de la actividad <input id="nom" type="text" name="encargado"> </br>
+  			Fecha termino 		<input id="Ctermino" type="date" name="termino"> </br>
+				<input type="hidden"name="asignar"value="{{$variable -> id_Actividad}}">
+				<input type="hidden"name="type"value="asignar">
+				<input type="submit" value="asignar">
+				{{Form::close()}}
+				</div>
+				 </td>
 				<td> <button class="mostrar" name="id"value="id_Actividad">click</button> </td>
 				<td> 	
 				{{Form::open(array('action' => 'actividadController@eliminar'))}}
@@ -71,6 +89,8 @@
 			</tr> 
 			</div>
 			@endforeach
+				
+
 			 <div id="edicion"> 
 			 {{Form::open(array('action' => 'AdminController@editar'))}}
 			 

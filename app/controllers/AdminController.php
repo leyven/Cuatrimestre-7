@@ -71,6 +71,38 @@ public function eliminar(){
 			
 
 	}
+	if ($decision=="asignar"){
+		$encargado= $_POST["encargado"];
+		$termino= $_POST["termino"];
+		$id= $_POST["asignar"];
+		$data = Input::all();
+	//reglas de validacion
+	$reglas=$array = array('encargado' => 'required', 
+						   'termino'=>'required'
+ 
+						   );
+	// Crear instancia del validador.
+ 	$validador = Validator::make($data, $reglas);
+
+ 	 if($validador->passes()) {
+ 	 	try{
+		 $bd = DB::table('actividad')
+            ->where('id_Actividad', $id)
+            ->update(array(
+            	'fecha_Termino' => $termino,
+            
+            'Encargado' => $encargado));
+
+			
+		return Redirect::to('admin')->with('mensaje', $mensaje1);
+		}
+		
+		catch(ErrorException $e){
+			return Redirect::to('admin');
+		}
+ 	 }
+ 	 return Redirect::to('admin')->withErrors($validador);
+	}
 	else{
 		return $this->eliminar();
 	}

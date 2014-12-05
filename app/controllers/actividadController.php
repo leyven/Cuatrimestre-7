@@ -86,7 +86,7 @@ public function elimsinar(){
 						   'Encargado'=>'required',
 						   'fecha_inicio'=>'date|required',
 						   'fecha_estimada'=>'date|required',
-						   'fecha_termino'=>'date|required'
+						   
 
 						   );
 	// Crear instancia del validador.
@@ -102,8 +102,6 @@ public function elimsinar(){
 			'fecha_Inicio'=>$fechaini,
 			'hora_Inicio'=>$horaini,
 			'fecha_Estimada'=>$fechaest,
-			'fecha_Termino'=>$fechater,
-			'hora_Termino'=>$horater,
 			'descripcion'=>$descripcion));
 			
 		return Redirect::to('registro_actividades')->with('mensaje', $mensaje1);
@@ -118,6 +116,44 @@ public function elimsinar(){
 			
 
 	}
+	
+	
+	public function mostrarRequerimientos3(){
+			try{
+			$req3 = DB::table('actividad')->get();
+			}catch(ErrorException $e){}
+			
+			$html = '<html><body>'
+					.'<table>'
+					.'<th>Folio</th><th>Prioridad</th><th>Departamento</th><th>Nombre</th><th>Fecha de captura</th><th>Hora de captura</th><th>Descripción</th><th>Capturista</th>'
+					.'<?php'				
+					.'foreach($req3 as $row){?><tr><td><?php echo $row['.Folio.']; ?></td><td><?php echo $row['.Departamento.']; ?></td><td><?php echo $row['.Nombre.']; ?></td><td><?php echo $row['.fecha_Captura.']; ?></td></tr><?php } ?>'
+					.'</table></body></html>';
+			
+			return PDF::load($html, 'A4','portrait')->download('reporte_requerimientos');
+			
+			
+			//return View::make('requerimientos2')->with('reqt', $reqt);
+		
+			
+		}
+		
+		
+	public function prueba(){
+		
+		
+			try{
+			$req3 = DB::table('requerimientos')->get();
+			}catch(ErrorException $e){}
+			
+			return PDF::load($req3, 'A4','portrait')->download('reporte_requerimientos');
+			
+			
+			
+			//return View::make('requerimientos2')->with('reqt', $reqt);
+		
+			
+		}
 	
 }
 

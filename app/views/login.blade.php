@@ -24,7 +24,7 @@
 	<tr><td>{{ Form::label('password', 'Contraseña:') }}</td></tr>
     <tr><td>{{ Form::password('password'); }}</td></tr>
     <tr><td><center>{{ Form::submit('Ingresar'); }}</td></tr>
-	<a href="login4">Iniciar como jefe</a>	
+	<a href="login4">Iniciar como Administrador</a>	
 	</table>
  
 {{ Form::close() }}

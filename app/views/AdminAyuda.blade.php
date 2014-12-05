@@ -99,6 +99,7 @@ foreach ($categorias as $key ) {
   			{{Form::close()}}
     		</div>
 			<br><br><a href="login">Cerrar sesión.</a>
+			<br><a href="personal">Catalogo de personal.</a>
 		</table> 
 	</div>
 </body>

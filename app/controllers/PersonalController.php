@@ -1,5 +1,5 @@
 <?php 
-class actividadController extends BaseController{
+class PersonalController extends BaseController{
 	public function mostrarPersonal(){
 
 		try{

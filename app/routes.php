@@ -24,7 +24,7 @@ Route::post('/AdminA', 'CatalogoController@administrar');
 
 
 Route::get('/inicioSesion','inicioController@sesion');
-
+Route::get('/personal', 'PersonalController@mostrarPersonal');
 
 Route::get('/admin', 'actividadController@mostrarAdmin');
 Route::post('/admin', 'AdminController@editar');

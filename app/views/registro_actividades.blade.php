@@ -12,43 +12,9 @@
 	<center><h1>Registro de Actividades</h1></center>
 	<div id="container">
 
-<<<<<<< HEAD
-=======
-		<form action="">
-			<center><table>
-				<tr>
-					<td>Folio:</td>
-					<td><!--AQUI VA EL FOLIO --></td>
-				</tr>
-				<tr>
-					<td>Actividad: </td>
-					<td><input type="text"placeholder="Actividad" size="15" maxlength="30"required></td>
-				</tr>
-				<tr>
-					<td>Prioridad:</td>
-					<td><!--Aqui va el label con los datos de la prioridad--></td>
-				</tr>
-				<tr>
-					<td>Departamento</td>
-					<td><input type="text"placeholder="Departamento" size="15" maxlength="30"required></td>
-				</tr>
-				<tr>
-					<td>Requerimiento al<br>que pertenece:</td>
-					<td><input type="text"placeholder="Requerimiento" size="15" maxlength="30"required></td>
-				</tr>
-				<tr>
-					<td>Encargado:</td>
-					<td><input type="text"placeholder="Encargado" size="15" maxlength="30"required></td>
-				</tr>
-				<tr>
-					<td>Fecha/Hora Inicio:</td>
-					<td>
-						<input type="text" required placeholder="dd/mm/aaaa" size="15" maxlength="30"required>
-						<br><input type="text"placeholder="Hora" size="15" maxlength="30"required>
-					</td>
 
->>>>>>> b52a6d97b738a4cb583edec479d554304d82408f
 <center><table>
+<a href="admin">Ir a Actividades</a>
 	{{Form::open(array('action' => 'actividadController@registro'))}}
 <ul class="errors">
  @foreach($errors->all() as $message)
@@ -66,7 +32,12 @@
 	<td>{{Form::textarea('Descripcion',Input::old('Descripción'), array('placeholder'=>'Descripción','cols'=>'30','rows'=>'10'))}}</td></tr>
 <tr>
 	<td>{{Form::label('Departamento', 'Departamento al que pertenece: ')}}</td>
-	<td>{{Form::text('Departamento',Input::old('Departamento'), array('placeholder'=>'Departamento','size'=>'20', 'maxlength'=>'30'))}}</td></tr>
+	<td>{{ Form::select('Departamento', array(
+		'Recursos Humanos' => 'Recursos Humanos',
+		'Recursos Financieros' => 'Recursos Financieros',
+		'Administracion' => 'Administración',
+		'Gerencia' => 'Gerencia',
+		'Compras' => 'Compras'))}}</td></tr>
 <tr><td>
 	{{Form::label('Requerimiento', 'Requerimiento: ')}}</td>
 	<td>{{Form::text('Requerimiento',Input::old('Requerimiento'), array('placeholder'=>'Requerimiento','size'=>'20', 'maxlength'=>'30'))}}</td></tr>
@@ -98,10 +69,6 @@
 			<input type="date" required>
 			<input type="numer"placeholder="Hora" size="15" maxlength="30"required><br><br>
 		</form>-->
-<<<<<<< HEAD
-=======
-
->>>>>>> b52a6d97b738a4cb583edec479d554304d82408f
 
 	</div>
 	

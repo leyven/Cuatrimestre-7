@@ -36,3 +36,5 @@
     {{ Form::submit('Registrar'); }}
  
 {{ Form::close() }}
+
+<br><br><a href="AdminA">Ir a edición de catálogo de ayuda.</a>

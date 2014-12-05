@@ -1,4 +1,11 @@
 <head>
+<meta http-equiv="cache-control" content="max-age=0" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="cache-control" content="no-store" />
+<meta http-equiv="cache-control" content="must-revalidate" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+<meta http-equiv="pragma" content="no-cache" />
 <!-- COLOCAR CSS a la TABLA -->
 	<meta charset="UTF-8">
 	<!--<link rel='shortcut icon' href='img/logo-ico.png' type='image/png'>-->
@@ -7,12 +14,13 @@
 	{{ HTML::style('css/admin.css') }}
 	{{ HTML::script('js/jquery.js') }}
     {{ HTML::script('js/admin.js') }}
+	
 </head>
 
 <body>
 
 	<img id="logo"src="img/buenaventura.gif" alt="">
-	<center><h1>Administracion de Actividades</h1></center>
+	<center><h1>Administración de Actividades</h1></center>
 	<div id="container">
 	<?php 
 	 ?>
@@ -95,9 +103,15 @@
   			descripcion 		<textarea  rows="5" cols="40" id="Cdescripcion" name="Descripcion" ></textarea></br>
   								<input type="hidden"name="type"value="editar">
   								<input  type="submit" id="send"value="editar">
+			
   			{{Form::close()}}
     		</div>
-			<a href="login2">Cerrar sesión</a>
+			 
+			<a href="{{ URL::to('generar2') }}">Reporte</a><br><br>
+			<a href="registro_actividades">Registrar actividad</a>
+			
 		</table> 
+		<a href="login2">Cerrar sesión</a>
 	</div>
+	
 </body>

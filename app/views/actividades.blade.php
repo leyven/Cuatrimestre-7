@@ -11,6 +11,7 @@
 	<center><h1>ACTIVIDADES</h1></center>
 	<div id="container">
 		<table> 
+		<a href="{{ URL::to('generar2') }}">Reporte</a>
 			<tr> 
 				<th>Folio</th> 
 				<th>Nombre actividad</th> 

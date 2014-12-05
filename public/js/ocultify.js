@@ -54,6 +54,9 @@ function toggle(elemento) {
 
 
 
+
+
+
 function esconder(){
   $("#category1").hide();
   $("#category2").hide();

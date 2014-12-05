@@ -14,8 +14,8 @@
 			<tr> 
 				<th>Folio</th> 
 				<th>Nombre actividad</th> 
-				<th>Id usuario</th>
-				<th>Id actividad</th>
+				<th>Encargado</th>
+				
 				<th>Fecha inicio</th>
 				<th>Fecha termino</th>
 				<th>Descripcion</th>
@@ -24,8 +24,8 @@
 			<tr> 
 				<td> {{$variable -> folio}} </td> 
 				<td> {{$variable -> nombre_Actividad}} </td> 
-				<td> {{$variable -> id_Usuario}} </td> 
-				<td> {{$variable -> id_Actividad}} </td> 
+				
+				<td> {{$variable -> Encargado}} </td> 
 				<td> {{$variable -> fecha_Inicio}} </td> 
 				<td> {{$variable -> fecha_Termino}} </td> 
 				<td> {{$variable -> descripcion}} </td> 

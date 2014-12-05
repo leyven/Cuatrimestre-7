@@ -32,10 +32,9 @@
 	box-shadow: -14px 10px 16px #000000 ;
 	border-style: solid;
 	border-color: rgba(159,0,0,1);
-	color:white;
 	margin-left: auto;
   	margin-right: auto;
-  	margin-top: 8%;
+  	margin-top: 3%;
   	max-width: 700px;
   	padding-bottom: 15px;
   	padding-left: 30px;
@@ -44,57 +43,23 @@
   	position: relative;
   	width: auto;}
 
-  	#sesion{
-	background-color: silver;
-	-moz-border-radius-topright:15px;
-	-moz-border-radius-topleft:15px;
-	-moz-border-radius-bottomleft:15px;
-	-moz-border-radius-bottomright:15px;
-	-webkit-border-top-right-radius:15px;
-	-webkit-border-bottom-right-radius:15px;
-	-webkit-border-top-left-radius:15px;
-	-webkit-border-bottom-left-radius:15px;
-	border-bottom-right-radius:15px;
-	border-top-left-radius:15px;
-	border-top-right-radius:15px;
-	border-bottom-left-radius:15px;
-	-moz-box-shadow: -14px 10px 16px #000000 ;
-	-webkit-box-shadow: -14px 10px 16px #000000 ;
-	box-shadow: -14px 10px 16px #000000 ;
-	border-style: solid;
-	border-color: rgba(159,0,0,1);
-	color:white;
-	margin-left: auto;
-  	margin-right: auto;
-  	margin-top: 8%;
-  	max-width: 700px;
-  	padding-bottom: 15px;
-  	padding-left: 30px;
-  	padding-right: 15px;
-  	padding-top: 10px;
-  	position: relative;
-  	width: auto;}
-
 table,th,td{
 	border-radius: .5em;
 }
 
-table {
-  padding-top: 1%;
- }
+tr{
+	color:white;
+}
 
 th {
-  border-style:solid;
+    border-style:solid;
   border-color: #6F7472 ;
   background-color:#6F7472;
  }
-  
-td {
+
+ td {
   border-style:groove;
   background-color:white;
-  padding:4px;
+  color: black;
+  padding:2px;
  }
-
- input{
-	border-radius: 5px;
-}

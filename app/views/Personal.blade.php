@@ -3,7 +3,7 @@
 <html>
 <head>
 	<title>catalogo de personal</title>
-	{{ HTML::style('css/admin.css') }}
+	{{ HTML::style('css/estiloP.css') }}
 </head>
 <body>
 <img id="logo"src="img/buenaventura.gif" alt="">

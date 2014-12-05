@@ -34,7 +34,7 @@ Route::post('/registro_actividades', 'actividadController@registro');
 Route::post('/registro_requerimientos', 'requerimientoController@registro_requerimientos');
 
 Route::get('/requerimientos', 'RequerimientosController@mostrarRequerimientos');	
-
+Route::get('/requerimientos2', 'RequerimientosController@mostrarRequerimientos2');
 
 // esta sera la ruta principal de nuestra aplicación
 // aquí va a estar el formulario para registrase y para inicio de sesión
@@ -176,7 +176,7 @@ Route::get('generar', function()
 
 Route::get('vista', function()
 {
-    $html = View::make("hello");
+    $html = View::make("login");
     return PDF::load($html, 'A4', 'portrait')->show();
 });
 
@@ -184,9 +184,118 @@ Route::get('vista', function()
 
 Route::get('generar2', function()
 {
-    $html = '<html><body>';
-    $html.= '<p style="color:red">Generando un sencillo pdf ';
-    $html.= 'de forma realmente sencilla.</p>';
-    $html.= '</body></html>';
-    return PDF::load($html, 'A4', 'portrait')->download('nombreArchivoPdf');
+$html="Reporte de Actividades";
+   try{
+			$req3 = DB::table('actividad')->get();
+			}catch(ErrorException $e){}
+			$html.='<html><head><meta charset="UTF-8"></head><table><tr><th>Folio</th><th>Nombre actividad</th><th>Fecha inicio</th><th>Fecha termino</th><th>Descripcion</th></tr> ';
+			foreach($req3 as $key){
+			$html .= "<tr>";
+			$html .= "<td>$key->folio</td><td>$key->nombre_Actividad</td><td>$key->fecha_Inicio</td><td>$key->fecha_Termino</td><td>$key->descripcion</td>";
+			$html .= "</tr>";
+			}
+			$html.='</table></html>';
+			return PDF::load($html, 'A2','portrait')->download('reporte_actividades');
 });
+
+
+Route::get('reporte_requerimientos', function()
+{
+$html="Reporte de Requerimientos: ";
+   try{
+			$req3 = DB::table('requerimientos')->get();
+			}catch(ErrorException $e){}
+			$html.='<html><head><meta charset="UTF-8"></head><table><tr><th>Folio</th><th>Prioridad</th><th>Nombre de requerimiento</th><th>Departamento</th><th>Fecha de captura</th><th>Hora de captura</th><th>Descripcion</th></tr> ';
+			foreach($req3 as $key){
+			$html .= "<tr>";
+			$html .= "<td>$key->Folio</td><td>$key->Prioridad</td><td>$key->Nombre</td><td>$key->Departamento</td><td>$key->fecha_Captura</td><td>$key->hora_Captura</td><td>$key->Descripcion</td>";
+			$html .= "</tr>";
+			}
+			$html.='</table></html>';
+			return PDF::load($html, 'A2','portrait')->download('reporte_requerimientos');
+});
+
+
+Route::get('reporte_requerimientos_humanos', function()
+{
+$html="Reporte de Requerimientos: ";
+   try{
+			$req3 = DB::table('requerimientos')->where('Departamento','=','Recursos Humanos')->get();
+			}catch(ErrorException $e){}
+			$html.='<html><head><meta charset="UTF-8"></head><table><tr><th>Folio</th><th>Prioridad</th><th>Nombre de requerimiento</th><th>Departamento</th><th>Fecha de captura</th><th>Hora de captura</th><th>Descripcion</th></tr> ';
+			foreach($req3 as $key){
+			$html .= "<tr>";
+			$html .= "<td>$key->Folio</td><td>$key->Prioridad</td><td>$key->Nombre</td><td>$key->Departamento</td><td>$key->fecha_Captura</td><td>$key->hora_Captura</td><td>$key->Descripcion</td>";
+			$html .= "</tr>";
+			}
+			$html.='</table></html>';
+			return PDF::load($html, 'A2','portrait')->download('reporte_requerimientos_humanos');
+});
+
+Route::get('reporte_requerimientos_financieros', function()
+{
+$html="Reporte de Requerimientos: ";
+   try{
+			$req3 = DB::table('requerimientos')->where('Departamento','=','Recursos Financieros')->get();
+			}catch(ErrorException $e){}
+			$html.='<html><head><meta charset="UTF-8"></head><table><tr><th>Folio</th><th>Prioridad</th><th>Nombre de requerimiento</th><th>Departamento</th><th>Fecha de captura</th><th>Hora de captura</th><th>Descripcion</th></tr> ';
+			foreach($req3 as $key){
+			$html .= "<tr>";
+			$html .= "<td>$key->Folio</td><td>$key->Prioridad</td><td>$key->Nombre</td><td>$key->Departamento</td><td>$key->fecha_Captura</td><td>$key->hora_Captura</td><td>$key->Descripcion</td>";
+			$html .= "</tr>";
+			}
+			$html.='</table></html>';
+			return PDF::load($html, 'A2','portrait')->download('reporte_requerimientos_financieros');
+});
+Route::get('reporte_requerimientos_administracion', function()
+{
+$html="Reporte de Requerimientos: ";
+   try{
+			$req3 = DB::table('requerimientos')->where('Departamento','=','Administracion')->get();
+			}catch(ErrorException $e){}
+			$html.='<html><head><meta charset="UTF-8"></head><table><tr><th>Folio</th><th>Prioridad</th><th>Nombre de requerimiento</th><th>Departamento</th><th>Fecha de captura</th><th>Hora de captura</th><th>Descripcion</th></tr> ';
+			foreach($req3 as $key){
+			$html .= "<tr>";
+			$html .= "<td>$key->Folio</td><td>$key->Prioridad</td><td>$key->Nombre</td><td>$key->Departamento</td><td>$key->fecha_Captura</td><td>$key->hora_Captura</td><td>$key->Descripcion</td>";
+			$html .= "</tr>";
+			}
+			$html.='</table></html>';
+			return PDF::load($html, 'A2','portrait')->download('reporte_requerimientos_Administracion');
+});
+
+Route::get('reporte_requerimientos_gerencia', function()
+{
+$html="Reporte de Requerimientos: ";
+   try{
+			$req3 = DB::table('requerimientos')->where('Departamento','=','Gerencia')->get();
+			}catch(ErrorException $e){}
+			$html.='<html><head><meta charset="UTF-8"></head><table><tr><th>Folio</th><th>Prioridad</th><th>Nombre de requerimiento</th><th>Departamento</th><th>Fecha de captura</th><th>Hora de captura</th><th>Descripcion</th></tr> ';
+			foreach($req3 as $key){
+			$html .= "<tr>";
+			$html .= "<td>$key->Folio</td><td>$key->Prioridad</td><td>$key->Nombre</td><td>$key->Departamento</td><td>$key->fecha_Captura</td><td>$key->hora_Captura</td><td>$key->Descripcion</td>";
+			$html .= "</tr>";
+			}
+			$html.='</table></html>';
+			return PDF::load($html, 'A2','portrait')->download('reporte_requerimientos_Gerencia');
+});
+
+Route::get('reporte_requerimientos_compras', function()
+{
+$html="Reporte de Requerimientos: ";
+   try{
+			$req3 = DB::table('requerimientos')->where('Departamento','=','Compras')->get();
+			}catch(ErrorException $e){}
+			$html.='<html><head><meta charset="UTF-8"></head><table><tr><th>Folio</th><th>Prioridad</th><th>Nombre de requerimiento</th><th>Departamento</th><th>Fecha de captura</th><th>Hora de captura</th><th>Descripcion</th></tr> ';
+			foreach($req3 as $key){
+			$html .= "<tr>";
+			$html .= "<td>$key->Folio</td><td>$key->Prioridad</td><td>$key->Nombre</td><td>$key->Departamento</td><td>$key->fecha_Captura</td><td>$key->hora_Captura</td><td>$key->Descripcion</td>";
+			$html .= "</tr>";
+			}
+			$html.='</table></html>';
+			return PDF::load($html, 'A2','portrait')->download('reporte_requerimientos_compras');
+});
+
+
+Route::get('/reporte','actividadController@prueba');
+
+

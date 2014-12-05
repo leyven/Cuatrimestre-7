@@ -8,16 +8,20 @@
 
 <title>Requerimientos</title>
 <img id="logo"src="img/buenaventura.gif" alt="">
+<center>
+<table>
+	<tr>
+		<th><?php
+			echo 'Bienvenido '. Auth::user()->Nombre . ', su Id es: '.Auth::user()->id .', tipo de usuario: '. Auth::user()->Tipo .', Departamento: '. Auth::user()->Departamento;
+			$depto = Auth::user()->Departamento;
+			$tipo = Auth::user()->Tipo;?>
+		</th>
+	</tr>
+	<tr>
+		<td><center/>{{HTML::link('/CatalogoAyuda','ir a catalogo de ayuda');}}</td>
+	</tr>
+</table>
 
-<?php
-echo 'Bienvenido '. Auth::user()->Nombre . ', su Id es: '.Auth::user()->id .', tipo de usuario: '. Auth::user()->Tipo .', Departamento: '. Auth::user()->Departamento;
-$depto = Auth::user()->Departamento;
-$tipo = Auth::user()->Tipo;
-?>
-<br><br><center>
- 
-<center>{{HTML::link('/CatalogoAyuda','ir a catalogo de ayuda');}}<br><br>
-</center>
 <div id="requerimiento">
 <br><br><h1><center>Requerimientos</center></h1>
 <center>
@@ -29,7 +33,8 @@ $tipo = Auth::user()->Tipo;
 		<th>Folio </th><th>Prioridad</th><th>Departamento</th><th>Nombre</th><th>Fecha de captura</th><th>Hora de captura</th><th>Descripción</th><th>Capturista</th>      
 			@foreach($req1 as $key)
 			{{'<tr>'.'<td>'.$key->Folio.'</td>'.'<td>'.$key->Prioridad.'</td>'.'<td>'.$key->Departamento.'</td>'.'<td>'.$key->Nombre.'</td>'.'<td>'.$key->fecha_Captura.'</td>'.'<td>'.$key->hora_Captura.'</td>'.'<td>'.$key->Descripcion.'</td>'.'<td>'.$key->Capturista.'</td>'.'</tr>'}}
-			@endforeach  
+			@endforeach 
+				<a href="reporte_requerimientos_financieros">Generar Reporte.</a>
 			</table>
 		</div>
 		
@@ -39,6 +44,7 @@ $tipo = Auth::user()->Tipo;
 			@foreach($req2 as $key)
 			{{'<tr>'.'<td>'.$key->Folio.'</td>'.'<td>'.$key->Prioridad.'</td>'.'<td>'.$key->Departamento.'</td>'.'<td>'.$key->Nombre.'</td>'.'<td>'.$key->fecha_Captura.'</td>'.'<td>'.$key->hora_Captura.'</td>'.'<td>'.$key->Descripcion.'</td>'.'<td>'.$key->Capturista.'</td>'.'</tr>'}}
 			@endforeach  
+			<a href="reporte_requerimientos_humanos">Generar Reporte.</a>
 			</table>
 		</div>
 		
@@ -48,6 +54,7 @@ $tipo = Auth::user()->Tipo;
 			@foreach($req3 as $key)
 			{{'<tr>'.'<td>'.$key->Folio.'</td>'.'<td>'.$key->Prioridad.'</td>'.'<td>'.$key->Departamento.'</td>'.'<td>'.$key->Nombre.'</td>'.'<td>'.$key->fecha_Captura.'</td>'.'<td>'.$key->hora_Captura.'</td>'.'<td>'.$key->Descripcion.'</td>'.'<td>'.$key->Capturista.'</td>'.'</tr>'}}
 			@endforeach  
+			<a href="reporte_requerimientos_administracion">Generar Reporte.</a>
 			</table>
 		</div>
 		
@@ -56,7 +63,8 @@ $tipo = Auth::user()->Tipo;
 		<th>Folio </th><th>Prioridad</th><th>Departamento</th><th>Nombre</th><th>Fecha de captura</th><th>Hora de captura</th><th>Descripción</th><th>Capturista</th>
 			@foreach($req4 as $key)
 			{{'<tr>'.'<td>'.$key->Folio.'</td>'.'<td>'.$key->Prioridad.'</td>'.'<td>'.$key->Departamento.'</td>'.'<td>'.$key->Nombre.'</td>'.'<td>'.$key->fecha_Captura.'</td>'.'<td>'.$key->hora_Captura.'</td>'.'<td>'.$key->Descripcion.'</td>'.'<td>'.$key->Capturista.'</td>'.'</tr>'}}
-			@endforeach  
+			@endforeach 
+				<a href="reporte_requerimientos_gerencia">Generar Reporte.</a>
 			</table>
 		</div>
 		
@@ -66,6 +74,7 @@ $tipo = Auth::user()->Tipo;
 			@foreach($req5 as $key)
 			{{'<tr>'.'<td>'.$key->Folio.'</td>'.'<td>'.$key->Prioridad.'</td>'.'<td>'.$key->Departamento.'</td>'.'<td>'.$key->Nombre.'</td>'.'<td>'.$key->fecha_Captura.'</td>'.'<td>'.$key->hora_Captura.'</td>'.'<td>'.$key->Descripcion.'</td>'.'<td>'.$key->Capturista.'</td>'.'</tr>'}}
 			@endforeach  
+			<a href="reporte_requerimientos_compras">Generar Reporte.</a>
 			</table>
 		</div>		
 		</section>

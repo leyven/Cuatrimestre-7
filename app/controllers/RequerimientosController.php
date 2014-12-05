@@ -20,7 +20,20 @@ class RequerimientosController extends BaseController {
 			
 		}
 		
-
+public function mostrarRequerimientos2(){
+			try{
+			$reqt = DB::table('requerimientos')->get();
+			}catch(ErrorException $e){}
+			
+			
+			
+			
+			return View::make('requerimientos2')->with('reqt', $reqt);
+		
+			
+		}
+ 
+ 
  
 }
 ?>

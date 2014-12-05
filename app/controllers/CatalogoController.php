@@ -106,5 +106,15 @@ foreach ($categorias as $key ) {
 		return $this->eliminarC();
 	}
 	}
+	
+		
+	   public function doLogout()
+    {
+        //Desconctamos al usuario
+        Auth::logout();
+ 
+        //Redireccionamos al inicio de la app con un mensaje
+        return Redirect::to('/logout')->with('msg', 'Gracias por visitarnos!.');
+    }
 }
 ?>

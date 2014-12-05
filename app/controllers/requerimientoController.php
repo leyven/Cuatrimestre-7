@@ -16,6 +16,7 @@ public function mostrar(){
 		public function registro_requerimientos(){
 		$folio= $_POST["Folio"];
 		$prioridad= $_POST["Prioridad"];
+		$departamento= $_POST["Departamento"];
 		$nombre= $_POST["Nombre"];
 		$fechacap= $_POST["fecha_captura"];
 		$horacap= $_POST["hora_captura"];
@@ -30,6 +31,7 @@ public function mostrar(){
 	//reglas de validacion
 	$reglas=$array = array('Folio' => 'numeric|required', 
 						   'Prioridad'=>'required',
+						   'Departamento'=>'required',
 						   'Nombre'=>'required',
 						   'fecha_captura'=>'date|required',						   
 						   'Descripcion'=>'required',
@@ -44,6 +46,7 @@ public function mostrar(){
 		 $id = DB::table('requerimientos')->insertGetId(array(
 			'Folio'=>$folio,
 			'Prioridad'=>$prioridad,
+			'Departamento'=>$departamento,
 			'Nombre'=>$nombre,
 			'fecha_Captura'=>$fechacap,
 			'hora_Captura'=>$horacap,

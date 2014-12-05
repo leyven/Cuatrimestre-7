@@ -10,7 +10,7 @@
 	<meta charset="UTF-8">
 	<!--<link rel='shortcut icon' href='img/logo-ico.png' type='image/png'>-->
 	<title>Control de Actividades</title>
-	<link rel="stylesheet" type="text/css" href="css/estilo.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="css/estiloP.css" media="screen" />
 	{{ HTML::style('css/admin.css') }}
 	{{ HTML::script('js/jquery.js') }}
     {{ HTML::script('js/admin.js') }}
@@ -44,9 +44,7 @@
 
 			</tr> 
 			@foreach ($var as $variable)
-			<div class="informacion"
-			
-			>
+			<div class="informacion">
 			<tr class="info"
 			data-folio="{{$variable -> folio}}"
 			data-actividad="{{$variable -> nombre_Actividad}}"

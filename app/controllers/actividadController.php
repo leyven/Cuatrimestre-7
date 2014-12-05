@@ -22,15 +22,32 @@ public function mostrarAdmin(){
 		}
 		// variable por notificaciones
 		$contador=0;
+		$array[0]="hola";
+		$date = date('Y-m-d');
+		$date2 =date('Y-m-d',(strtotime ( '-2 day' , strtotime ( $date) ) ));
+		$date3 =date('Y-m-d',(strtotime ( '+1 day' , strtotime ( $date) ) ));
+		echo "The current server timezone is: " . $date2."<br>";
 		foreach ($var as $key) {
-			$key -> fecha_Termino;
-			$array[$contador]=$key;
+			$flag=$key -> fecha_Termino;
+			if($flag>=$date2){
+				$array[$contador]=$flag;
+			}
+			
 			$contador=$contador+1;
 		}
+
+		foreach ($array as $key) {
+			$notificaciones = DB::table('actividad')
+                    ->where('fecha_Termino', '>=', $date2)
+                    ->where('fecha_Termino', '<', $date3)                   
+                    ->get();
+		}
+		
+
 		///**termino las notificaciones
 
 		
-		return View::make('Admin')->with('var', $var);
+		return View::make('Admin')->with('var', $var)->with('notificaciones', $notificaciones);
 	}
 
 public function elimsinar(){

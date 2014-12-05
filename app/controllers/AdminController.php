@@ -72,13 +72,13 @@ public function eliminar(){
 
 	}
 	if ($decision=="asignar"){
-		$encargado= $_POST["encargado"];
-		$termino= $_POST["termino"];
+		$ftermino= $_POST["Ftermino"];
+		$htermino= $_POST["Htermino"];
 		$id= $_POST["asignar"];
 		$data = Input::all();
 	//reglas de validacion
-	$reglas=$array = array('encargado' => 'required', 
-						   'termino'=>'required'
+	$reglas=$array = array('Ftermino' => 'required', 
+						   'Htermino'=>'required'
  
 						   );
 	// Crear instancia del validador.
@@ -89,9 +89,9 @@ public function eliminar(){
 		 $bd = DB::table('actividad')
             ->where('id_Actividad', $id)
             ->update(array(
-            	'fecha_Termino' => $termino,
+            	'fecha_Termino' => $ftermino,
             
-            'Encargado' => $encargado));
+            'hora_Termino' => $htermino));
 
 			
 		return Redirect::to('admin')->with('mensaje', $mensaje1);

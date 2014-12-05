@@ -38,7 +38,7 @@
 				<th>Fecha inicio</th>
 				<th>Fecha termino</th>
 				<th>Descripcion</th>
-				<th>Asignar</th>
+				<th>terminar actividad</th>
 				<th>Editar</th>
 				<th>Eliminar</th>
 
@@ -70,8 +70,9 @@
 				<td>	<button class="asignar" name="idA">click</button>
 				<div class="showasignar">
 				{{Form::open(array('action' => 'actividadController@eliminar'))}}
-				Encargado de la actividad <input id="nom" type="text" name="encargado"> </br>
-  			Fecha termino 		<input id="Ctermino" type="date" name="termino"> </br>
+				
+  			Fecha termino 		<input id="Ctermino" type="date" name="Ftermino"> </br>
+  			Hora termino 		{{Form::custom('time', 'Htermino')}} </br>
 				<input type="hidden"name="asignar"value="{{$variable -> id_Actividad}}">
 				<input type="hidden"name="type"value="asignar">
 				<input type="submit" value="asignar">
